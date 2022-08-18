@@ -1,37 +1,1348 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Europe," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Charlie's Thinking" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="作者从三大元素：古希腊罗马文化、基督教教义以及日耳曼战士文化开篇，描述了这三大元素如何彼此强化，又相互对立，最终形塑为欧洲文明的内 核；继而在诸多世纪以来催生帝国与城邦，激发征服与十字军东侵，造就出许多性格截然分明的人物──如仁慈的皇帝、好斗的教皇、侠义的骑士，乃至世上第一批享受繁荣和启蒙果实的公民。哲学思维、民主制度的渊源、政治权力的传递、甚至是医学、生物学使用拉丁文的源始，这种种欧洲因素不断形">
+<meta property="og:type" content="article">
+<meta property="og:title" content="极简欧洲史概述">
+<meta property="og:url" content="http://charinezhua.github.io/2018/11/23/seurope/index.html">
+<meta property="og:site_name" content="Charlie&#39;s Thinking">
+<meta property="og:description" content="作者从三大元素：古希腊罗马文化、基督教教义以及日耳曼战士文化开篇，描述了这三大元素如何彼此强化，又相互对立，最终形塑为欧洲文明的内 核；继而在诸多世纪以来催生帝国与城邦，激发征服与十字军东侵，造就出许多性格截然分明的人物──如仁慈的皇帝、好斗的教皇、侠义的骑士，乃至世上第一批享受繁荣和启蒙果实的公民。哲学思维、民主制度的渊源、政治权力的传递、甚至是医学、生物学使用拉丁文的源始，这种种欧洲因素不断形">
+<meta property="og:locale">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu01.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu02.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu03.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu04.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu05.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu06.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu07.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu08.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu09.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu10.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu11.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu12.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu13.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu14.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu15.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//seu16.jpg">
+<meta property="article:published_time" content="2018-11-23T13:57:30.000Z">
+<meta property="article:modified_time" content="2018-12-02T10:45:58.000Z">
+<meta property="article:author" content="Charlie Zha">
+<meta property="article:tag" content="Europe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://charinezhua.github.io/.io//seu01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://charinezhua.github.io/2018/11/23/seurope/"/>
+
+
+
+
+
+  <title>极简欧洲史概述 | Charlie's Thinking</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Charlie's Thinking</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://charinezhua.github.io/2018/11/23/seurope/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://f.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2d77d69d5b47eca8064388ff7.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Charlie's Thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">极简欧洲史概述</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-23T13:57:30+00:00">
+                2018-11-23
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-02T10:45:58+00:00">
+                2018-12-02
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/History/" itemprop="url" rel="index">
+                    <span itemprop="name">History</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/23/seurope/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/23/seurope/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  22
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>作者从三大元素：古希腊罗马文化、基督教教义以及日耳曼战士文化开篇，描述了这三大元素如何彼此强化，又相互对立，最终形塑为欧洲文明的内 核；继而在诸多世纪以来催生帝国与城邦，激发征服与十字军东侵，造就出许多性格截然分明的人物──如仁慈的皇帝、好斗的教皇、侠义的骑士，乃至世上第一批享受繁荣和启蒙果实的公民。哲学思维、民主制度的渊源、政治权力的传递、甚至是医学、生物学使用拉丁文的源始，这种种欧洲因素不断形塑了现代文明的各种特质，使欧洲遥遥走在现代世界的前列。<br>
+<escape><span id="more"></span></escape></p>
+<p>1<br>
+<img src="/.io//seu01.jpg" alt="seu01 pic"><br>
+公元前260年，欧洲历史的主题是第一次布匿战争：罗马（当时还不是帝国）和北非的迦太基争夺地中海霸权，著名的汉尼拔这时还没出生。</p>
+<p>罗马北方的绿色小头像是凯尔特人，蓝色的是早期日耳曼人。</p>
+<p>这时希腊本土的统治者其实已经是马其顿人了（当然没有亚历山大大帝），而是卡山德王朝。而东方是两个希腊化国家，中东的塞琉古和埃及的托勒密（为了在图上放得下，把托勒密帝国的版图严重北移了）。</p>
+<p>这一年中国发生了秦赵长平之战。</p>
+<p>2<br>
+<img src="/.io//seu02.jpg" alt="seu02 pic"><br>
+公元元年（这时耶稣基督其实很可能已经出生数年了），罗马帝国在地中海沿岸已一统江山，是西方世界毫无疑问的绝对主宰。注：意大利红球上的罗马之鹰，上书SPQR：即Senatus Populusque Romanus的缩写，意为“罗马元老院与人民”(‘The Senate and People of Rome’)，罗马大军无论征战何处，旗帜上总有这四个字母，然后据说还要刻在山崖上为证，十分霸气。</p>
+<p>北边的是日耳曼人诸部落（这里用现代德国国旗代表日耳曼），此时他们还是由松散的一个个部落组成，所以虽然作战勇猛，却总是被纪律严明的罗马大军各个击破。</p>
+<p>位于罗马东方的是帕提亚（安息）帝国，位于伊比利亚半岛上灰底的小头像是巴斯克人——至今没有人能说得清他们的起源。</p>
+<p>3<br>
+<img src="/.io//seu03.jpg" alt="seu03 pic"><br>
+这是公元450年，盛极一时的罗马帝国已经分裂为东西两部，西罗马帝国摇摇欲坠，早已没有SPQR的霸气。</p>
+<p>来自东方的蛮族匈人向西入侵，一些想象力丰富的畅销书作者言之凿凿地断定，他们是匈奴人的后裔，但实际上在历史学界，对此尚无严肃的结论。匈人王阿提拉率领的骑兵极其骁勇善战，他们的强大攻击使原来住在中东欧的日耳曼人遭受无法抵挡，于是蜂拥进入西罗马帝国，直接促成了西罗马帝国的灭亡。因西方历史称阿提拉为“上帝之鞭”。</p>
+<p>位于东罗马帝国东北方已经有早期斯拉夫人了（红白蓝三色球），不过还在沉睡中。绿球是保加尔人，那时候他们还没有开始和斯拉夫人融合。</p>
+<p>4<br>
+<img src="/.io//seu04.jpg" alt="seu04 pic"><br>
+公元731年，在中近东阿拉伯帝国的崛起对欧洲文明产生了巨大的影响，而在这个时候远东的唐帝国处于鼎盛时期，20年后的怛罗斯之战中，阿拉伯帝国击败了唐帝国，将中亚划入穆斯林的统治之下。阿拉伯人一路“圣战”征服了西亚北非和西班牙，在他们继续向欧洲征战的路上遇到了法兰克国王，普瓦提埃战役阻止了穆斯林进一步的入侵，保卫了基督教文明。</p>
+<p>在东方，拜占庭（东罗马）帝国用神秘的“希腊火”打退阿拉伯海军，保住了君士坦丁堡的补给。在黑海东岸，标有六角形的大卫王之星的是可萨帝国，这个信仰犹太教的游牧民族国家一直是拜占庭的忠实盟友。</p>
+<p>中东欧的斯拉夫人此时兴起，红白蓝三色旗是斯拉夫人的象征（也是现在的俄罗斯国旗）。东欧北部，标有白底蓝十字（现芬兰国旗）的小球代表早期的芬兰-乌拉尔人。</p>
+<p>意大利半岛上，南部还受拜占庭控制，中部戴白色高帽的是教皇（这时还没出现政治意义上的教皇国），教皇北边的是伦巴第王国。拜占庭北方的绿球是第一保加利亚帝国，黑球是阿瓦尔人。这个阶段既没有匈人也没有匈牙利人。</p>
+<p>在盎格鲁撒克逊人入侵以后，不列颠进入了群雄割据的时代。</p>
+<p>5<br>
+<img src="/.io//seu05.jpg" alt="seu05 pic"><br>
+历史进入到了1099年，这时的中国正值宋辽相争的尾声，北乔峰应该去世不久，南慕容可能还坐在土墩上做着大燕皇帝梦。在西方，这时有两个皇帝，一个东罗马（拜占庭）帝国的，一个是神圣罗马帝国的。</p>
+<p>前者已日渐衰落，正遭受塞尔柱突厥人的攻击，被迫向西欧各国求援。在教皇的允许下，西欧封建主们发动了第一次十字军东征，地中海东岸那几个戴帽子的便是十字军建立的短命国家。具有讽刺意味的是：一百年后，十字军的攻击目标竟然变成了拜占庭帝国本身！</p>
+<p>后者是在法兰克帝国一分为三之后，在东法兰克帝国的废墟上演变而来的，它是今天德国的前身，黄球上的双头鹰是其的象征。夹在德国和俄国之间的是波兰，其南边的红白道道是匈牙利（匈牙利人不是匈人，匈人在阿提拉死后就瓦解消失，匈牙利人直到九世纪才来到欧洲）。神圣罗马帝国东方的大红球是庞大松散的罗斯公国（因首都位于基辅，又称基辅罗斯），是今天俄罗斯国家的前身。</p>
+<p>而在西法兰克帝国的基础上，法兰西王国已建立，蓝底上面的金色鸢尾花一直是法国王室的象征。英格兰则被定居法国的诺曼底人征服：诺曼人除了征服英国意外还控制了意大利南部。夹在神圣罗马帝国和法兰西王国之间的是勃艮第，注意是带弯的十字，和英格兰的圣乔治旗是不一样。</p>
+<p>此时西班牙中南部被来自北非的穆斯林统治，当时欧洲正值中世纪的黑暗时代，很多古希腊古罗马的文化流失。而统治西班牙的穆斯林却很重视文化，翻译整理了大量古希腊罗马时代的文献，因此图中以看书的球来代表西班牙的穆斯林国家。伊比利亚半岛北部则是莱昂、加泰罗尼亚等几个信仰基督教的小国。</p>
+<p>这时，戴着牛角头盔的北欧诸国是称霸欧洲海上的维京人，这是维京海盗海外冒险的时代。</p>
+<p>6<br>
+<img src="/.io//seu06.jpg" alt="seu06 pic"><br>
+到了1300年，这时整个欧亚大陆历史的主题都是蒙古人的崛起，蒙古骑兵西征灭了阿拉伯帝国，若不是在埃及被马穆鲁克骑兵打败，他们向西的脚步似乎还会横扫非洲。在被征服的地盘上，蒙古人建立了汗国：右上角是金帐汗国，右下角是伊尔汗国，它们跟元朝同为成吉思汗的子孙建立，但互不统属。</p>
+<p>日薄西山的拜占庭已经散发出死亡的气味，在新一波来自穆斯林游牧蛮族（奥斯曼土耳其）的攻击面前摇摇欲坠，苟延残喘了一个半世纪以后灭亡，神奇的“希腊火”也没能挽救这个古老的帝国。让人感慨不已的是：由于生怕秘方外泄，拜占庭人对希腊火的配方极端保密，甚至到了为防止敌人窥探到相关秘密而非到紧急关头决不示人，宁可牺牲将士而绝少应用的地步。有人认为这种保密工作做的如此到家，以致于几个世纪后连拜占庭人自己都不再得知希腊火准确的配方了。</p>
+<p>英格兰发动了入侵苏格兰的战争，就是电影《勇敢的心》里的历史背景。西班牙的基督徒不断从北非摩尔人手中收复失地，终于把伊斯兰政权彻底赶出伊比利亚半岛，建立了西班牙王国。</p>
+<p>意大利的城市国家兴起，文艺复兴快要开始了。城市国家里红色的是威尼斯，两个圣乔治旗（和英格兰一样）分别是热那亚和米兰。</p>
+<p>夹在德法之间的是勃艮第，是法兰西的有力对手，并在英法百年战争中与英国结盟。荷兰比利时在当时也是勃艮第的领地。在蒙古人西征时，莫斯科公国兴起（白底黑色双头鹰）。波兰与莫斯科之间是立陶宛。波罗的海沿岸是条顿骑士团的地盘。</p>
+<p>7<br>
+<img src="/.io//seu07.jpg" alt="seu07 pic"><br>
+时光又过了200年，大航海时代开始，拿着望远镜向西眺望的西班牙葡萄牙找到了新大陆。</p>
+<p>这时拜占庭已经被奥斯曼土耳其用大炮灭掉了，然后奥斯曼继续用炮口对着伤痕累累的匈牙利。莫斯科则继承了被灭的拜占庭（东罗马）帝国，自称第三罗马，以金色双头鹰为标志。滑稽的是，消灭了拜占庭的奥斯曼竟然也自认为是罗马文明的继承人。</p>
+<p>法国打赢了百年战争，并建立了中央集权，不但把英国的势力逐出大陆，还消灭了国内的老对手勃艮第。进而瞄准了富裕的意大利城市国家（腰里绑着一堆钱袋的威尼斯是大航海前夜最富裕的国家），发动了“意大利战争”，意大利诸城市国家和教皇一起抵抗法国。</p>
+<p>中欧最大的国家是是立陶宛（红球白骑士）。这时已经进入了火药时代，大家纷纷装备上了火枪。 荷兰则归西班牙统治。需要说明的是在德意志，虽然一直有名义上的统一国家——神圣罗马帝国，但德国在古代其实是一盘散沙，邦国林立。这里把比较大的几个德意志邦国单独画了出来，勃兰登堡（白底红鹰），奥地利，巴伐利亚等等。</p>
+<p>8<br>
+<img src="/.io//seu08.jpg" alt="seu08 pic"><br>
+又过了一百年，这是大航海时代巅峰。西班牙举着十字架和火枪征服了新大陆，获得了大量财富（腰上的钱袋），也吞并了葡萄牙，还控制了南意大利。尽管荷兰（当时还叫尼德兰联合省）已经从西班牙独立，尽管他们的“无敌舰队”在12年前刚刚惨败于英格兰，但似乎没有人认为他们的霸权已经在失落</p>
+<p>击败了西班牙人的英格兰进入了都铎王朝，腰上那一圈是莎士比亚时代的典型装束。法国此时则进入了波旁王朝的统治，从之前的三朵鸢尾花变成了满脸鸢尾花。</p>
+<p>中欧那个大的是波兰-立陶宛联合王国。最东边的是沙皇俄国。</p>
+<p>在东欧，基督教国家团结起来打退了土耳其，其中哈布斯堡王朝主要从陆上、威尼斯主要在海上负担了包围基督教欧洲的重任。</p>
+<p>上黑下黄是哈布斯堡王朝，它同时名义上也是神圣罗马帝国（双头鹰）的皇帝。当时神罗处于分裂割据状态，邦国林立。哈布斯堡的领土大多不在德意志境内（奥地利除外），其臣民也多为斯拉夫人。更因这时已经发生了宗教改革，所以皇帝对德国本土的影响更加有限，故此把哈布斯堡和神圣罗马分别画出来。</p>
+<p>哈布斯堡上边那个白底红鹰是勃兰登堡，它后来兼并了其东北的普鲁士，成为了普鲁士王国。但该国的主体是以柏林为中心的勃兰登堡，而非那块被兼并的土地（为了区别于日耳曼地区的本土，后来将那里称为东普鲁士）。东普鲁士是条顿骑士团的残留，势力很小，但为什么勃兰登堡要放弃原本国号而以普鲁士为名呢？因为东普鲁士是侵略斯拉夫人的土地得来的，是殖民地，不在神圣罗马帝国范围内。而神罗范围内只有罗马人国王和波西米亚国王这两个王号，不允许其他的王国出现。于是便利用帝国之外的普鲁士称王。正如大英帝国的“皇位”其实是“印度皇帝”。因此在东普鲁士头顶上有个悬着的王冠。这正是表示后来勃兰登堡借着东普鲁士的领地加冕成为了王国。</p>
+<p>9<br>
+<img src="/.io//seu09.jpg" alt="seu09 pic"><br>
+1707年，西班牙王位继承战争。法国路易十四为了帮他孙子争取西班牙王位，和欧洲列国作战。普鲁士（白底黑鹰）已经成为王国。</p>
+<p>东方的俄国为了夺得面向波罗的海的出海口，和波兰一起对瑞典发动了大北方战争。附带说一下：汉语里常笼统地说沙皇俄国，这是不精确的：“沙皇俄国”的存在时间是1547年到1721年。而1721年以后的是“俄罗斯帝国”。“沙皇”（Tsar）在历史上是斯拉夫人对拜占庭皇帝和蒙古大汗的尊称。后来莫斯科牛了，就自称沙皇。不过后来他们（尤其是崇洋媚外的彼得大帝）觉得这是一个很土很东方化的称谓，不如西方的“皇帝”气派。于是在1721获得大北方战争胜利之后，俄罗斯元老院授予彼得大帝“全俄罗斯皇帝”的头衔，正式称皇帝，从此以后的俄罗斯正式国号为“俄罗斯帝国”，不再称为“沙俄”。所以事实上中文里是将沙皇俄国和俄罗斯帝国笼统的叫做“沙俄”。</p>
+<p>位于北非，戴海盗帽子的是信仰伊斯兰教的巴巴里海盗，为患地中海数百年。</p>
+<p>此时苏格兰和英格兰合并成为大不列颠王国（爱尔兰尚未加入），也就是把英格兰的圣乔治旗、苏格兰的圣安德鲁旗合并成为了米字旗。仔细观察这时的米字旗还少一个红色的叉（代表爱尔兰）。爱尔兰此时虽然也被英国统治，但还没有正式和英国合并。注意英国戴着的那顶很可爱的三角帽，这是启蒙时代的流行装束，那个时代英军都戴这种帽子，参见《加勒比海盗》。</p>
+<p>10<br>
+<img src="/.io//seu10.jpg" alt="seu10 pic"><br>
+1811年，这个时代欧洲历史的主题只有一个：拿破仑战争，这个时代欧洲大陆的绝对主角只有一个人：拿破仑，这个以船形帽为标志的小个子科西嘉人。</p>
+<p>普鲁士和哈布斯堡都被拿破仑打残，西班牙也被爆眩晕中。拿破仑已经解散了神圣罗马帝国，此后的图中就没有神圣罗马的双头鹰了，哈布斯堡放弃了神圣罗马皇帝改称奥地利皇帝，它对德意志小邦国的领导地位也随之被废除了，这些邦国被合并为“莱茵同盟”，与意大利王国、那不勒斯王国及波兰等一同成为拿破仑的附庸国，他们都拿着小小的法兰西三色旗）。</p>
+<p>这里说一下波兰：在十四至十七世纪，波兰一度是中东欧大国。但因为其独特的贵族“集体领导制”和“贵族一票否决权”，到了十八世纪就衰弱不堪已经被俄普奥瓜分，此时拿破仑为了对抗俄国又让波兰复国，可是拿破仑战败后波兰又被瓜分。</p>
+<p>因为法国入侵，葡萄牙皇室跑去巴西了，插了个牌子说BRB（Be right back，马上就回来），后来导致了巴西独立等等种种混乱。搞笑的是，因为皇室在里约热内卢，所以按照定义，葡萄牙“本土”反而才是殖民地。</p>
+<p>巴尔干半岛上拿着枪的小国是塞尔维亚，他们发动了反对土耳其统治的起义，这个高傲而英勇的民族总是冲在欧洲武装抵抗土耳其帝国的最前线。</p>
+<p>这时的英国已经是大不列颠及爱尔兰联合王国，所以米字旗也包括了代表爱尔兰的红叉。另外，1809年英国舰队在地中海打败了法国舰队，夺取了爱奥尼亚诸岛，所以右下角有个小米字旗。1830年希腊独立，但直到1862年英国人才把这些岛还回去。除了隔着海峡的英国人外，整个欧洲只有俄罗斯还敢跟拿破仑怒目相视，转过年的1812年战争揭开了拿破仑灭亡的序幕。</p>
+<p>11<br>
+<img src="/.io//seu11.jpg" alt="seu11 pic"><br>
+到了十九世纪中叶。欧洲大陆刚刚经历了1848年革命。英国进入了工业革命（小齿轮），成了最富有的国家（钱袋）。</p>
+<p>神圣罗马早已解散，德意志彻底分裂为许多小国。普鲁士戴上尖顶盔，走上军国主义道路，希望打败奥地利（上黑下黄），靠武力统一德国。</p>
+<p>俄国以泛斯拉夫主义（手里举起三色旗）为依据，希望从土耳其手里解放斯拉夫人，并成为东欧的主宰，然而这引起英法的忌惮，不久后爆发了克里米亚战争。</p>
+<p>在北欧，挪威在瑞典胁迫之下与其组成联盟。之前挪威是丹麦的属地，在拿破仑战争中丹麦支持法国，而瑞典反对法国。在反法同盟胜利之后，对瑞典的奖品就是挪威。</p>
+<p>之前的一千多年里，意大利一直只是个地理概念，诸多小城市国家割据一方。这时，撒丁王国正在统一意大利的路上，所以举了个现代意大利的小旗。</p>
+<p>12<br>
+<img src="/.io//seu12.jpg" alt="seu12 pic"><br>
+1914年，史无前例的第一次世界大战爆发了！</p>
+<p>普法战争后普鲁士已经统一德国，建立了德意志第二帝国（神圣罗马是第一，希特勒是第三）。为了安抚境内的匈牙利贵族，奥地利帝国变成了奥匈帝国二元政体。德奥抛弃前嫌，成立了同盟国。早已衰落的土耳其为了抗击俄国也加入了同盟国。同盟国的第三号原本轮不上土耳其，而是由撒丁王国完成统一大业的意大利，但在一战爆发后意大利却选择了观望，并在次年倒向协约国一方而向奥匈宣战。</p>
+<p>协约国的主要成员是英法俄三大国（法国将北非西部变成了自己的殖民地），不过后来增加到包括中国在内的31个，不过大部分是打酱油的。或许塞尔维亚是个例外，由于奥匈帝国的费迪南大公喋血萨拉热窝，巴尔干火药桶成了一战的导火索，塞尔维亚也成了第一个受到同盟国攻击的国家。塞尔维亚虽是小国，在强敌面前作战却非常英勇，另一方面，这种民族性格其实也注定了很多悲剧的必然发生。</p>
+<p>13<br>
+<img src="/.io//seu13.jpg" alt="seu13 pic"><br>
+一战才过去不到二十年，二战的脚步就已经迫近，直接原因是法西斯主义兴起，这是欧洲的悲剧。说到法西斯我们最先想起的肯定是希特勒，这时他和纳粹党已经在德国上台（虽然没有小胡子，但注意发型）。但实际上早在1922年，法西斯就在意大利上台了，意大利手里拿着的那个东西是古罗马执政官的束棒，也就是法西斯一词的由来。</p>
+<p>一战以后爱尔兰从英国独立了，更大的建国浪潮则发生在东欧，各民族国家纷纷独立，包括波兰、捷克斯洛伐克、罗马尼亚等。匈牙利脱离二元帝国，奥地利从此成为一个普通的中欧小国。土耳其脱下了高筒帽，告别奥斯曼帝国。由于建国过程过于匆忙，新国家版图是在英法等战胜国主导下制定，因而这些国家之间一开始就潜伏着很多历史矛盾。注意捷克斯洛伐克看纳粹德国、希腊看土耳其的眼神，匈牙利和罗马尼亚在互相怒视（匈牙利失去了特兰西瓦尼亚）。</p>
+<p>三十年代的大萧条让英法自顾不暇，表情可怜，与波兰有军事同盟的法国无奈地看着纳粹上台。苏联意味深长的小眼神，既可解读为这时和纳粹德国关系微妙，也可以解读为用警惕而敌视的眼神看着西方。</p>
+<p>西班牙手里举着无政府工团主义的红黑两色旗，那西班牙是无政府主义最为盛行的时期，工团主义是其中影响力较大的一支，其中包括很多后来共产主义者，这股思潮和后来的内战联系很大。1934年出现了一次罢工和起义，镇压者正是后来的独裁者弗朗哥。</p>
+<p>14<br>
+<img src="/.io//seu14.jpg" alt="seu14 pic"><br>
+1943年，史无前例的第二次世界大战正值中期，世界反法西斯同盟与德意日法西斯轴心的殊死搏斗。</p>
+<p>在东线，纳粹德国与苏联大战正酣，轴心国一方还有匈牙利、保加利亚，罗马尼亚、芬兰等仆从国。芬兰想要夺回苏芬战争中被苏联占领的领土，而匈牙利、保加利亚，罗马尼亚不得已被绑在法西斯战车上，准备同归于尽。北欧的丹麦，挪威也在纳粹铁蹄蹂躏下，不过被第三帝国的钢盔遮住了。土耳其则保持着中立。</p>
+<p>但在斯大林格勒会战之后，德方颓势渐显。在库尔斯克大会战之后，轴心国的失败命运已难以挽回。</p>
+<p>在西线，英国此时还没在法国登陆，对德国只是轰炸而已。法国本土早已投降并被德国占领，在维希成立了亲德傀儡政权（手上拿着纳粹小旗）。</p>
+<p>在南线，轴心国的北非军团已经覆灭，英美加联军在西西里登陆。控制北非殖民地的是戴高乐领导的自由法国，它的旗帜中间那个是“洛林十字”，圣女贞德的象征，所以这时有两个法国。</p>
+<p>永久中立的瑞士发了战争财，在悠闲的数钱；瑞典此时则与纳粹暗通款曲，保持着“有臭味的中立”。</p>
+<p>15<br>
+<img src="/.io//seu15.jpg" alt="seu15 pic"><br>
+1968年，欧洲的主题是冷战，标着$的是西方国家，标?的是共产–主义国家，中间拉起铁丝网（铁幕）隔开。这一年发生了布拉格之春，捷克斯洛伐克希望进行民主化改革，结果被苏联带领华约爆了。</p>
+<p>中东的以色列与阿拉伯国家对抗，希腊和土耳其在争夺塞浦路斯。法国头戴戴高乐的圆筒帽。南斯拉夫头戴铁托的船形帽。各国疆域基本上就是现代版图了。</p>
+<p>16<br>
+<img src="/.io//seu16.jpg" alt="seu16 pic"><br>
+到了1993年，苏东剧变，冷战结束。苏联解体以后，一大堆加盟共和国独立。俄罗斯领土大幅度缩水，而且失去了面向波罗的海和黑海的大部分出海口，无奈的哭了，它的过期又恢复了三色旗。</p>
+<p>东西德合并，新德国脸上还留着缝合的痕迹。捷克和斯洛伐克却分家了，图中的有丝分裂实在是太可爱了。南斯拉夫陷入内战。罗马尼亚怒视着东北方本是同根生却一直分出去的摩尔多瓦，摩尔多瓦右上角又有一个要分出去的德涅斯特河沿岸共和国。格鲁吉亚身上有两个要分出去的小球——阿布哈兹和南奥塞梯。</p>
+<p>因为一战中奥斯曼帝国曾对亚美尼亚人进行种族清洗（亚美尼亚人死亡人数有从30万到150万的各种版本），土耳其和亚美尼亚互相怒视，阿塞拜疆又怒视着亚美尼亚（纳戈尔诺—卡拉巴赫冲突），希腊还用鄙夷的表情看着马其顿（因马其顿也是希腊一个省的名称，还有其他一些原因，希腊长期以来不承认马其顿，并且不向马开放边界）。</p>
+<p>西线无事，北欧的挪威靠在北海开采石油急剧变富。在北非，摩洛哥还和西撒哈拉纠缠不清。</p>
+<p>到这里，欧洲大概的历史也就讲完了。最后送一张和前面那张不一样的全图，加上了欧盟。当然，现在欧盟也变了，英国要脱欧了。分久必合合久必分，历史规律啊。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>求鼓励</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Europe/" rel="tag"><i class="fa fa-tag"></i> Europe</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/22/phil01/" rel="next" title="《哲学的慰藉》-阿兰.德波顿">
+                <i class="fa fa-chevron-left"></i> 《哲学的慰藉》-阿兰.德波顿
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/23/geurope/" rel="prev" title="欧洲列强恩仇录之一-高晓松《晓说》节选">
+                欧洲列强恩仇录之一-高晓松《晓说》节选 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://f.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2d77d69d5b47eca8064388ff7.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/charinezhua" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:charinezhua@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/charinezhua" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Charlie Zha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://charinezhua.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://charinezhua.github.io/2018/11/23/seurope/';
+          this.page.identifier = '2018/11/23/seurope/';
+          this.page.title = '极简欧洲史概述';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://charinezhua.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

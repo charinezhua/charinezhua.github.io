@@ -1,37 +1,1305 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Trump," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Charlie's Thinking" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="哥伦比亚大学政治系教授黎安友对话独立学者荣剑，探讨美中两国民间评价特朗普的双重视角，以及最近一轮中美对立的缘由。留作参考，以备之后做形势比对，这是上篇。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="特朗普、中美关系与中国改革前景（上）">
+<meta property="og:url" content="http://charinezhua.github.io/2018/11/29/trump01/index.html">
+<meta property="og:site_name" content="Charlie&#39;s Thinking">
+<meta property="og:description" content="哥伦比亚大学政治系教授黎安友对话独立学者荣剑，探讨美中两国民间评价特朗普的双重视角，以及最近一轮中美对立的缘由。留作参考，以备之后做形势比对，这是上篇。">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-11-29T17:12:54.000Z">
+<meta property="article:modified_time" content="2018-12-01T16:53:54.000Z">
+<meta property="article:author" content="Charlie Zha">
+<meta property="article:tag" content="Trump">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://charinezhua.github.io/2018/11/29/trump01/"/>
+
+
+
+
+
+  <title>特朗普、中美关系与中国改革前景（上） | Charlie's Thinking</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Charlie's Thinking</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://charinezhua.github.io/2018/11/29/trump01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://f.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2d77d69d5b47eca8064388ff7.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Charlie's Thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">特朗普、中美关系与中国改革前景（上）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T17:12:54+00:00">
+                2018-11-29
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-01T16:53:54+00:00">
+                2018-12-01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Politics/" itemprop="url" rel="index">
+                    <span itemprop="name">Politics</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/29/trump01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/29/trump01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  7.9k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  26
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>哥伦比亚大学政治系教授黎安友对话独立学者荣剑，探讨美中两国民间评价特朗普的双重视角，以及最近一轮中美对立的缘由。留作参考，以备之后做形势比对，这是上篇。<br>
+<escape><span id="more"></span></escape></p>
+<p>荣剑：这次我来哥大和您对话，准备了四个大的问题，第一个是关于特朗普总统的问题，第二个是中美关系的问题，第三个是对当前中国情况的分析和判断，第四个是如何看待中国未来改革的可能性，如果中国的改革停滞了，还有其他什么方式来推动中国社会的变革？我们先来谈第一个问题。</p>
+<h2 id="一、如何评价特朗普总统？——中美民间的双重视角">一、如何评价特朗普总统？——中美民间的双重视角</h2>
+<p>黎安友：在中国说特朗普总统任何一个坏话都不过分敏感，都可以发表。</p>
+<p>荣剑：您说对了。在中国议论特朗普总统的意识形态限制大概是最小的，说他好也行，说他不好也行，有广泛的言论空间。我记得两年前特朗普刚刚当选总统时，我和您也探讨过他，我听说您夫人因为特朗普当选总统而气得掉眼泪，有这回事？</p>
+<p>黎安友：是。</p>
+<p>荣剑：我的问题从两个方面来理解，一个方面是您基于美国政治情况、两党的关系、以及选民、包括中期选举的情况，对他的基本认识。中国的知识分子意识到了，特朗普当选总统以后造成了美国如此大的分裂，这是美国几十年内没有看到过的情况。小布什当选总统的时候，和民主党的戈尔因为统计选票造成了一个比较大的冲突，但是并没有达到现在这种几乎完全撕裂了美国的情况。我想听听您对特朗普总统这两年来执政的看法。第二个方面，我是从中国国内对特朗普总统的看法来提出问题。现在很多中国自由知识分子把改变中国目前局面的希望寄托在特朗普总统给中国所制造的压力上，实际情况也是这样——特朗普当选美国总统以来，特别是今年以来，中美贸易战都是在特朗普总统领导下发起来的，给中国造成了很大的政治压力，让中国的知识分子似乎看到了一个希望，这是他们对特朗普总统一个比较好的评价的很重要的立场。这次我可以告诉你，中国很多自由知识分子特别希望特朗普总统领导的共和党能够在中期选举中拿下参众两院的多数席位。</p>
+<p>黎安友：错误。</p>
+<p>荣剑：我知道。这是两个视角，一个是您从美国国内的政治关系来看特朗普总统的执政业绩，第二个就是您对流行于中国知识界的“特朗普神话”——对特朗普寄予这么大希望，是怎么看的？</p>
+<p>黎安友：特朗普能够在2016年选上有很大的偶然性，实际上当时投民主党的票是美国的大多数。特朗普意外当选有三个理由，一个理由是美国以往有这种种族主义的白人至上的排外主义文化，这个文化虽然居于少数，但是以往一直存在，特朗普能够把这个力量动员起来。第二个因素是全球化伤害了一些美国人的利益，让他们愤怒。第三个因素是我们的宪政制度存在着设计上的问题，原来建立宪政制度，故意要限制多数人的政权，比如参议院的议员构成，无论一个州是人口多或者人口少，无论是农业州还是工业州，无论是农村或者城市，每个州同样是两个参议员，权力是一样的。Electoral college（选举人团制度）就是这样，它在客观上扩大了人们所说的“落后的”或保守的力量。</p>
+<p>荣剑：他们在州的比重上可以占点优势。</p>
+<p>黎安友：这个制度从长远的历史立场来看，可以让右派慢慢衰弱，应该会慢慢消失，但是，它暂时——而且这个暂时是个比较长远的暂时——会利用我们宪政制度的优势。</p>
+<p>还有一个因素是希拉里•克林顿作为民主党的候选人，不太行。我也见过她，在面对面时，她是非常有吸引力的，但是她在公众场合里，好像不那么自然，她的行为看上去是比较虚假或做作的。这样的话，本应投她的票的人，比如女人或者中产阶级或者有教育的人，没有积极性或者根本没有去投她的票。由于这四个因素，特朗普能够当选总统。</p>
+<p>特朗普当选总统以后，共和党的政客有两种，一种是我不能跟这个人合作，认为这是一个坏人，他们就被排除在总统团队的权力外面。共和党的另一部分人，主要包括米奇•麦康奈尔——参议院的共和党领袖，他做出一个判断，他心里知道特朗普是一个坏人，没有道德，说过很多假话，但是他愿意跟特朗普一起做事。麦康奈尔是很聪明的政治家，他有一个远见，要改变最高法院的自由主义者和保守主义者的比例，要改变收税制度，要缩小我们的社会福利支出等等。他自己心里认为，这个目标是有价值的，他愿意和特朗普合作，为了达到他一辈子的目标。这样的话，特朗普在短期可以有所成就，但是这次中期选举表现出，蓝色（民主党阵营）的大多数已经动员起来，所以我多少怀疑他在下一轮的总统选举会再选上。问题在于，民主党会拿出什么候选人我们还不知道。布隆伯格没有希望，因为他在民主党没有基础，而且他作为一个候选人，你可以说他脱离民众太远，这个人基本是一个技术官员，不是一个政治家。民主党有很多人才，但是不知道谁能够成为民主党的候选人。</p>
+<p>荣剑：桑德斯行不行？</p>
+<p>黎安友：他太极端。</p>
+<p>荣剑：太社会主义了。</p>
+<p>黎安友：对，我喜欢他，但是他大概太极端，太左，也可能太老。</p>
+<p>荣剑：前年选举时民主党有一个很年轻的候选人，但是桑德斯在民主党内部竞选时票数好像接近于希拉里的票，在民主党内部居于领先地位。</p>
+<p>黎安友：前副总统拜登年纪也比较大，但是他看上去还不太像他的实际年龄这么大，他精力充沛，非常活跃，不像桑德斯给人的印象，所以他有希望。</p>
+<p>荣剑：刚才涉及到的是美国国内对特朗普总统的认识和评价，可以说是两极分化。这次我在哈佛参加费正清中心和中国天则研究所联合举办的关于中国改革四十年的研讨会，有一个单元是哈佛四个教授谈美国问题，包括谈中美关系问题。其中有一个教授，Martin Feldstein教授，他谈到了美国当前经济形势，他提出了一个判断是，现在美国短期的经济形势非常好，实际情况要比统计数据还要好，美国增长比较好，增长率3%以上，失业率很低，股票市场也很好，但他认为从长期来看，美国经济不太好。我注意到，哈佛的四个教授的立场和您一样，都属于民主党，都对特朗普总统是持批评态度。</p>
+<p>黎安友：不一定是民主党，一般学院里，喜欢特朗普的人极少。</p>
+<p>荣剑：这里涉及到一个问题，基于美国的政党政治，是不是对于特朗普总统的施政评价难以形成共识，实际上也是难以形成大致客观公正的立场。那天中期投票的晚上，费正清中心主任宋怡明（Michael Szonyi）先生请我们吃龙虾，图书馆主任南希(Nancy Hearst)女士也来了，她对我们说，如果我们不是民主党人，她就不和我们同席吃饭了。当然，她是开玩笑，但这个玩笑也直率地表达出她和哈佛的大多数教授一样，对特朗普总统反感至极。在这样的情绪之下，恐怕很难对特朗普总统的施政效果作出客观评价吧？哈佛的经济学家们在探讨美国经济的时候还是客观地指出了美国现在经济不错，但他们都似乎认为美国经济的良好表现不是特朗普总统领导的一个成果，而是奥巴马总统以来已经有了一个良好的开端。这个看法我总感觉好像有点太党派化了。</p>
+<p>黎安友：我和他们（哈佛教授）的党派主义观点是一致的，为什么？因为2008年我们面临金融危机之后，奥巴马做了很多努力来恢复我们的经济。恢复经济是一个过程，这个过程需要时间来开始，它后来会继续下去，但是它早晚会碰到问题，问题大概主要是政府赤字。社会福利也好，军队也好，政府越来越多借钱，向谁借钱？向全球借钱，第一是向中国借钱。因为向中国借钱，贸易赤字是必然的，没有办法避免。因为向中国借这么多美元，中国先需要手里有美元，美元来自于出口，美国不向中国买产品的话，中国就没有美元能借给美国。</p>
+<p>美国停止向中国买东西的话，也得停止向它借钱，不能继续向国际借钱，得自己结自己的账，停止财政赤字，这是经济规律。这里面有一个问题，共和党把奥巴马时期管理银行的规矩减弱了，开放银行的各种限制之后，银行当然会更冒险，会创造下一轮金融危机的条件，而且股票市场自然而然会上会下，有时候它会下的梯度很大，经济不会不断地上升和不断地好，不可能是特朗普总统上任后马上就把经济刺激得更快了。</p>
+<p>中国许多自由知识分子把推动中国进一步变革的希望，寄托在特朗普总统给中国制造的压力上<br>
+荣剑：那个哈佛教授就描绘了一个长远的非常可怕的美国经济前景，他说短期很好，长期来看问题很大，一个是资产价格太高了，主要是股票市场价格太高了，还有一个利率问题，第三是通货膨胀。他描绘了一个非常可怕的前景，认为从目前的高点回到正常水平的话，美国的国民将损失8万亿美元，因为上去以后突然跌下来了，落差太大了。我感觉他好像有点夸大长期的困难了。</p>
+<p>黎安友：可能夸大了，因为通货膨胀我看不到。</p>
+<p>荣剑：通货膨胀看不到？</p>
+<p>黎安友：美国物价比较稳定。我们的联邦银行要求物价每年2%上涨，但是现在还没有达到2%，现在低于2%。</p>
+<p>荣剑：实际上还是一个问题，涉及到对特朗普当选总统以后的政策做绩效评价，也就是对他功劳的评价。美国经济的增长和他实行的经济政策究竟有多大的关联度？从中国国内来看尤其如此，大家都普遍觉得中国经济状况不好，而美国的经济似乎欣欣向荣，中美经济之间形成了一个比较大的对比和反差。</p>
+<p>黎安友：你说中国经济不好？美国经济只是相对好，实际上中国的经济增长比我们大概高三倍，中国经济不错。</p>
+<p>荣剑：中国经济增长大概是6.7%，实际上很多人认为这个统计数字是有问题的，可能是负增长，因为很多省份的增长情况都是非常糟糕的，可能是负增长，至少不会是6.7%。对特朗普总统的认识和评价还涉及到一个问题，这也是中国人比较关心的一个问题：世界秩序的重构。特朗普总统当选时明确宣布，美国优先，美国第一，他的政策似乎也退回到美国国内了，采取保守主义态度，好像要放弃对世界秩序的领导责任。中国的党和政府也看到这一点，美国人退出去，中国人正好来了。习主席在前年杭州举行的G20会议上正式提出要用中国方案来解决世界性问题，要建立人类命运共同体。这些雄心勃勃的计划显然是针对美国人的“退出”而言的。</p>
+<p>黎安友：中国人站起来、富起来、强起来了？</p>
+<p>荣剑：但是，实际情况并不是这样，我们看到的实际情况是，特朗普总统在说美国要退回去时，实际上他对这两年以来的世界秩序的重构还是起到了非常大的作用。举几个例子，一个是美国、澳大利亚、日本、印度构成了一个美澳印日的准同盟，太平洋战略变成了印太战略，这是一个大的调整。第二就是他对原来奥巴马总统重返亚洲的行动又有了进一步的扩大。另外就是处理与欧洲的关系，也有了有利于美国的变化，欧洲尽管都很反感他，我们看到这次“一战”几年活动上，法国马克龙总统无情地批评他，包括德国的领导人也在批评他，但批评归批评，事后还是没办法，都不得不接受特朗普总统所主导的对国际秩序的新的调整。这在许多中国人看来是很了不起的。再就是处理朝鲜问题，原来主动权在中国人手里，现在这个主动权已经转移到美国人那里去了，这是比较明显的一个变化，至少从现在来看，这个转变的迹象还是比较积极的。大致从这几个方面来看，我觉得应该对特朗普总统的外交政策给予客观评价，我不知黎老师对此是怎么看？</p>
+<p>黎安友：当然要客观。一个问题是说特朗普任期当中的美国政府的政策有多少是特朗普自己决定的？有多少是属于政府里面别的机关比方说五角大楼的决定？或者是国务院、或者是谁的决定？好像特朗普自己能够注意某一个问题的能力是非常有限的，而且他主要注意的问题是美国国内政治，是动员他的支持者。他每天要看多少小时的电视，写Twitter。他看电视、写Twitter的内容主要是美国国内的一些小的问题，一些并不是问题的问题，一些假的东西。每天有24小时，他有多少时间注意比方说印度太平洋战略？他有多少懂印度太平洋战略？我自己的判断是，白宫执行的一些政策不完全都是他的政策，有的是他的顾问的，有的是各个部门的，外交部或者是国防部的，印度太平洋战略是一个提法而已，它的内容多少、有没有钱、有没有军队、有没有真正的战略？</p>
+<p>荣剑：已经有联合演习了。</p>
+<p>黎安友：有些动作，不是零，但是我认为也不是一个真正的战略。说起奥巴马的“重返亚太”战略，那个东西也有它的弱点，但是他的实质内容比特朗普的实质内容要浓厚得多。至于印度，印度当然要追求他们所谓的战略自主权，不愿意很密切地跟任何别的国家合作。澳大利亚非常怀疑特朗普的可靠性，日本也非常怀疑特朗普的可靠性，为什么？一个是特朗普的性格是这样；第二是特朗普宣布要发起贸易战，包括向日本宣布贸易战；第三是朝鲜问题，朝鲜问题到底是什么？特朗普先要扩大危机感，说朝鲜马上要打我们，我们也马上要打朝鲜，先宣布危机，然后宣布危机解决，但实际情况没有变化，朝鲜照样有核武器。今天的报纸不知道你们有没有看，其实我也没有必要看今天的报纸，我们已经都知道，朝鲜没有什么实质变化。日本可以看到这个现实，中国也可以看到这个现实，谁都能够看到，唯一不能够看到这个现实的是特朗普自己。（美国国务卿）蓬佩奥也知道。特朗普告诉蓬佩奥，我已经解决了问题，你去赶紧扫扫地吧。蓬佩奥也非常清楚朝鲜问题现在比过去更大了，但是他不能说，因为他要维持他跟特朗普的关系。你说的日本、印度、澳大利亚，他们都能看到，特朗普的这个做法并没有解决问题。不光是朝鲜问题。比如说北美贸易协议，特朗普先宣布有危机，美国吃亏了，后来宣布危机解决了，我们已经达成一个新的协议，新的协议稍有变化，没有根本性的变化。欧洲的问题，特朗普说欧洲欺骗美国，后来他宣布说欧洲已经踢掉了他们的国防预算，美国要求欧洲增加共同防务预算的策略成功了，也就是所谓的解决了问题。</p>
+<p>荣剑：听到您上述的评论，我知道您对特朗普总统的执政水平打的分数很低，而中国国内的一些自由派知识分子却给特朗普打了很高的分数。撇开美国两党政治和美国的国内情况不谈，特朗普总统发动的中美贸易战的确还是给中国制造了非常大的麻烦。这是我们下面要讨论的问题：如何看待中美关系的现状和中美贸易战？这是中国公众和中国政府都高度关注的问题。</p>
+<h2 id="二、这一轮中美对立究竟因何而起？">二、这一轮中美对立究竟因何而起？</h2>
+<p>荣剑：直至去年底，我相信绝大数中国人都想象不到中美关系会在今年发生这么大的变化，简直是颠覆性的。去年11月特朗普总统访华，中国政府给予了特朗普总统至高的礼遇，中国国家主席在故宫接待他，这种接待规格是前所未有的，而且中国给了美国总统两千多亿美元的订单，这也是前所未有的。不可思议的是，不过一年时间，中美关系迅速由热变冷，似乎马上要进入到了一个经济“冷战”的状态。值得注意的是，中美贸易战，美国这边咄咄逼人，而中国政府则是不断退却防守，对这个现象黎老师您怎么看？</p>
+<p>特朗普总统2017年11月访华时，中美两国关系还相对融洽，几个月后因贸易战急转直下<br>
+黎安友：中国和美国的贸易问题，不知道你自己有没有注意到（白宫贸易委员会主席）纳瓦罗上个星期有一个讲话，说华尔街的势力不应该干预我们白宫的贸易政策，这个表现出纳瓦罗心里非常不安静。纳瓦罗知道特朗普在短期内会受到他的影响，但是特朗普早晚会出卖他。因为特朗普往往会暂时听某一个顾问的意见，然后会放弃那个顾问，听另外一个顾问的意见。而且特朗普为了给他的支持者一个“糖果”，他的办法是，把“糖果”分散给他的选民，你吃糖你就会暂时感觉到高兴，但是很快就饿了。</p>
+<p>我原来认为特朗普在中期选举之前，就会宣布他已经打败了中国，贸易战已经成功，习近平已经答应买多少东西，但是我已经说明了，这个解决不了美国的贸易赤字，贸易赤字可能会转到越南或者转到什么地方，但是不可能完全转到别的地方，因为中国还是一个非常庞大的工业国家。我原来认为特朗普在中期选举之前会宣布已经处理好这些事情了，事实证明这是我的一个误判。尽管如此，我还是相信他会比较快地宣布中国答应买美国多少东西，中美贸易战这个问题已经解决了，但像朝鲜问题一样，基本情况不变。所以，你说中国国内的自由主义知识分子认为特朗普向习施加了非常严重的压力，我不这么看，我认为从习的角度来看，特朗普是非常非常容易被左右的，被manipulate（操纵）的。习的做法可以非常简单，等到特朗普愿意解决这个问题时——现在特朗普以任何一个方式宣布他解决了问题，说他打败了习，习可以不说话，让特朗普说什么就说什么。事实上，特朗普完全知道他现在和未来最能够赚钱的地方是中国，他肯定是不会真正地在中国做什么坏事。</p>
+<p>荣剑：您这个看法很独到，有点出乎我的预料。因为中国从去年以来，国内情况似乎越来越糟糕，这不光是知识分子的言论空间越来越小，主要还是经济出问题了。这次中国和美国的贸易战，实际的效果，您判断得很准确，它的真正影响并不是很大。9月份中国的出口数据出来了，中国对美国的贸易顺差创记录，一个月400亿美元，因为去年一整年的顺差是3600亿美元，摊到每个月大概就是300亿美元左右，9月份有400亿的贸易顺差，这对美国新的关税政策会产生影响吧？当然，这个情况并不意味着中国已经取得了对美贸易战的胜利，事实上，中美贸易战对中国民营企业包括知识分子的心理影响还是非常大的。对于企业家来讲，他们不是完全算经济帐，仅仅看到短期的影响，而是注重中美关系破裂后对中国经济的深远影响。在中国经济趋于下行的周期，经济结构调整带来了动荡，如果再加上外部压力加大，这对民营企业的长期决策肯定会造成重大的不确定性，现在的预期普遍变坏了。中国的一个经济分析师最近有个内部讲话，社会反响很大，他表达的一个重要看法是，如果中美关系处于对抗性关系，那将影响中国30年到50年的国运。我相信很多民营企业家是同意这个判断的。最近（美国前财长）保尔森在新加坡讲话，认为中美关系如果处理不好，有可能经济冷战要来了。黎老师对特朗普总统所发起的中美贸易战对中国经济，包括对中国知识分子的重要影响，好像估计不足。至少在我看来，中美贸易战已经在促使中国不得不发生一些变化，虽然变化还不太明显。</p>
+<p>黎安友：在我看来，特朗普新的关税政策对中国经济的影响为什么不那么大，有三个因素。一个因素是我们的联储要提高利率，为了平衡物价每年上涨2%，由此产生的一个效果是美元比人民币或者比欧元或者比别的货币都要强，这样的话，虽然中国政府可能也要炒作人民币，但是主要是我们自己联储的影响，使得人民币价值下降，这多少会对冲掉提高关税的影响。</p>
+<p>荣剑：人民币贬值是一个重要原因。</p>
+<p>黎安友：第二，提高关税是美国的消费者出钱，而不是中国的工厂出钱。在消费品市场上，美国消费者其实没有更多的选择余地，我要买一个什么衣服或者什么手机，只能买中国的产品，包括有美国商标但由中国生产，比方说苹果公司的产品。关税提高后，消费者要付出更多的钱，但还得买中国的产品。从长远来看，产业链可能会有所调整，原来在中国开的工厂可能会搬到越南去，或者像台湾的富士康，他们现在要在威斯康星建一个工厂。但是，这个产业链的调整是一个过程，需要时间，也不可全面。第三，在中国那些以出口为主的公司，相当一部分是美国投资的，关税提高后，还是美国的企业吃亏，而不是中国的企业吃亏。当然，我不是说中美贸易战对中国经济没有任何影响，而是说影响有限，对美国也有负面的影响。</p>
+<p>一个更大的问题是，中美的对立主要不是特朗普创造的，实际上特朗普对中国是比较友好的，因为他在中国可以赚钱，而且他也不懂战略。在我看来，中美的对立和冲突，大概主要还是取决于中国的崛起。中国的崛起，虽然如你所说，现在的经济增长率不是6.7%，很可能是负数，但是从90年代一直到现在，中国的崛起是一个事实。中国有钱，它把钱大量地用于军事，它的军事现在对亚太地区的影响力要远远超过它过去对美国所构成的威胁。它把钱还大量地投入在外交方面，从而发挥着对非洲、南美以及各个地区的影响力。所以，中国作为新兴大国的崛起当然会引起以前的超级大国的危机感，这个危机感现在已经非常明显了。</p>
+<p>在企业界，美国人都认为你现在是吃我的面包，你却不让我在你的市场里面有平等的竞争能力，你还偷我的知识产权，你在各个关键的领域，比方说人工智能这个21世纪最新的经济领域，你可能会超越我。美国的经济界过去认为中国是一个非常漂亮的市场，我可以赚很多钱，他们现在认为不那么容易了。</p>
+<p>在战略界和军事界的智库，他们也认为中国现在已经构成了重大威胁，比如在南海的军事部署威胁到美国保护台湾的能力——南海和台湾有非常密切的战略关系。在知识界和大学，他们认为现在中国的签证政策，已经不是涉及像我一个人的小问题，而是成为它施加影响的一个工具了，通过是否给予美国学者记者的访华签证来干预美国的学术自由和新闻自由。美国人在美国的发言权和言论自由也受到了中国的干预。颇有讽刺意味的是，孔子学院在美国可以得到很大的发展空间，受到美国法律的保护，享有美国法律赋予他们的言论自由，但美国的一所大学University of California San Diego（加州大学圣迭戈分校），他们邀请达赖喇嘛来演讲，中国领事馆警告他们不应该做等等。还有一些例子可以提醒美国人，中国人在美国的领土上不容许美国人自由说话。</p>
+<p>你可以注意到，在国会，在五角大楼，在政府内外，不仅仅是特朗普，很多人都认为——不知道中国人能不能接受——中国的崛起是美国帮了大忙。我自己不敢强调这一点，但是我可以向你汇报很多美国人有这个观点，他们认为中国的发展成就在相当一个程度上应该归功于美国，是美国帮了中国大忙。美国之所以这么做，是因为美国希望并相信中国也会民主化，然而，中国并没有民主化，而是走了回头路。在这个认识框架里，中国作为新的大国的崛起，如果是一个友好的国家的话，美国会欢迎，假如是一个违反了美国所有的基本价值观的国家，那就是另当别论了。你要知道，美国人的价值观非常强调宗教，我自己不是信教的人，但是美国大多数人是非常信仰宗教。中国现在打压基督教和伊斯兰教，控制学术界，不尊重独立法治，逮捕律师等等，这些事实会让美国人非常害怕，认为中国作为一个崛起的国家是一个可怕的国家，而不是一个可爱的国家。</p>
+<p>我要强调，这个所谓的价值分歧，是当前美国和中国发生矛盾和冲突的一个主要根源，不是因为特朗普制造了中美之间的对抗性关系，而是中美两国在制度和价值观上的巨大差异，导致中美关系处在断裂的边界。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>求鼓励</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Trump/" rel="tag"><i class="fa fa-tag"></i> Trump</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/26/turtle/" rel="next" title="Python3 turtle的安装">
+                <i class="fa fa-chevron-left"></i> Python3 turtle的安装
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/29/trump02/" rel="prev" title="特朗普、中美关系与中国改革前景（下）">
+                特朗普、中美关系与中国改革前景（下） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://f.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2d77d69d5b47eca8064388ff7.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/charinezhua" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:charinezhua@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/charinezhua" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%A6%82%E4%BD%95%E8%AF%84%E4%BB%B7%E7%89%B9%E6%9C%97%E6%99%AE%E6%80%BB%E7%BB%9F%EF%BC%9F%E2%80%94%E2%80%94%E4%B8%AD%E7%BE%8E%E6%B0%91%E9%97%B4%E7%9A%84%E5%8F%8C%E9%87%8D%E8%A7%86%E8%A7%92"><span class="nav-number">1.</span> <span class="nav-text">一、如何评价特朗普总统？——中美民间的双重视角</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E8%BF%99%E4%B8%80%E8%BD%AE%E4%B8%AD%E7%BE%8E%E5%AF%B9%E7%AB%8B%E7%A9%B6%E7%AB%9F%E5%9B%A0%E4%BD%95%E8%80%8C%E8%B5%B7%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">二、这一轮中美对立究竟因何而起？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Charlie Zha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://charinezhua.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://charinezhua.github.io/2018/11/29/trump01/';
+          this.page.identifier = '2018/11/29/trump01/';
+          this.page.title = '特朗普、中美关系与中国改革前景（上）';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://charinezhua.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

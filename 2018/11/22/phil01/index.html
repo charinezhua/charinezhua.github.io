@@ -1,37 +1,1309 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="推荐," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Charlie's Thinking" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="阿兰.德波顿在这本书的前言里说，他读书是有目的的，是为了成为一个更好的，更有自知之明的，更多才多艺的人。这想必也是大部分读者翻开这本书的理由。想了解这个世界，或者说，用从多个角度、多种思维方式重新认识自己和自己身边的人和事，促使我们走近哲学、研究哲学。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《哲学的慰藉》-阿兰.德波顿">
+<meta property="og:url" content="http://charinezhua.github.io/2018/11/22/phil01/index.html">
+<meta property="og:site_name" content="Charlie&#39;s Thinking">
+<meta property="og:description" content="阿兰.德波顿在这本书的前言里说，他读书是有目的的，是为了成为一个更好的，更有自知之明的，更多才多艺的人。这想必也是大部分读者翻开这本书的理由。想了解这个世界，或者说，用从多个角度、多种思维方式重新认识自己和自己身边的人和事，促使我们走近哲学、研究哲学。">
+<meta property="og:locale">
+<meta property="og:image" content="http://charinezhua.github.io/.io//phil01.jpg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//phil01.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//phil02.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//phil03.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//phil04.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//phil05.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//phil06.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/.io//phil07.jpeg">
+<meta property="article:published_time" content="2018-11-22T14:48:33.000Z">
+<meta property="article:modified_time" content="2018-12-01T16:52:36.000Z">
+<meta property="article:author" content="Charlie Zha">
+<meta property="article:tag" content="推荐">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://charinezhua.github.io/.io//phil01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://charinezhua.github.io/2018/11/22/phil01/"/>
+
+
+
+
+
+  <title>《哲学的慰藉》-阿兰.德波顿 | Charlie's Thinking</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Charlie's Thinking</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://charinezhua.github.io/2018/11/22/phil01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://f.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2d77d69d5b47eca8064388ff7.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Charlie's Thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《哲学的慰藉》-阿兰.德波顿</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T14:48:33+00:00">
+                2018-11-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-12-01T16:52:36+00:00">
+                2018-12-01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%93%B2%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">哲学</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/22/phil01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/22/phil01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>阿兰.德波顿在这本书的前言里说，他读书是有目的的，是为了成为一个更好的，更有自知之明的，更多才多艺的人。这想必也是大部分读者翻开这本书的理由。想了解这个世界，或者说，用从多个角度、多种思维方式重新认识自己和自己身边的人和事，促使我们走近哲学、研究哲学。<br>
+<escape><span id="more"></span></escape></p>
+<p><img src="/.io//phil01.jpg" alt="phile01 pic"><br>
+德波顿的文、资中筠的译、周国平的序，读这样一本《哲学的慰藉》还需要更多理由吗？“哲学”一词希腊文的原义是“爱智慧”，它是人类知识的起源，国际公认最高学衔，无论文理都是“PHD”，即 Doctor of Philosophy（哲学博士），足以说明这点。如果能抛弃对哲学枯燥、无趣、吃饱撑着瞎想的固定思维或者马克思主义在中国的独断影响，或者能更客观地欣赏哲学的智慧魅力。<br>
+<img src="/.io//phil01.jpeg" alt="phile01 pic"></p>
+<p>德波顿以轻松优雅的笔调，讲诉某个哲学大师是如何面对某个困惑和不安的哲学问题的，以此带领我们走近苏格拉底、伊壁鸠鲁、塞内加、蒙田、叔本华、尼采等大师的精神世界，进行一次充满智慧的哲学之旅。</p>
+<h2 id="一、对与世不合的慰藉">一、对与世不合的慰藉</h2>
+<p><code>我们不该那么在意群众如何谈论我们，应该在意的是专家在正义和非正义的事情上说些什么。──苏格拉底</code><br>
+<img src="/.io//phil02.jpeg" alt="phile01 pic"><br>
+第一个出来的大师是现代哲学鼻祖–苏格拉底，他所遇的问题是与世不合。苏格拉底以谈话的方式与雅典各个阶层的人民谈论哲学问题，在长时间的谈论之后，苏格拉底发现许多人都过于无知而且自大，他们面对一个问题往往是取其片面人云亦云的答案，而非经过一个人仔细思考后得出的理性答案。苏格拉底总是以理性的思维，思辨的分析让与他争论的人心悦诚服。苏格拉底询问著名的拉斐尔神谕：谁是最聪明的人。神谕指示：就是你呀。这使他惊讶万分。苏格拉底：“我唯一知道的事情是，我一无所知。”<br>
+书中以雅克·路易·大卫创作的《苏格拉底之死》油画开始叙述，苏格拉底的言论和行为触犯了雅典统治阶层的权威，他们指责他不敬城邦之神，腐蚀了雅典的社会构成，唆使年轻人反对他们的父辈。雅典当局经过审判，判处他死刑，当局说如果苏格拉底承认错误并从此不再进行哲学活动，那就可免除死刑，但是他拒绝了，还说出以下慷慨激昂的话语：<br>
+只要我一息尚存，官能健全，我决不会停止哲学实践，不会停止对你们进行劝导，不会停止向我遇到的每一个人阐明真理……所以，诸位先生，不论你们是否释放我，你们知道我是不会改变我的行为的，虽百死而不悔。<br>
+画中的苏格拉底在好友的簇拥中，高谈阔论，伸手要接那杯将终结他性命的毒酒，好像一点都不在乎，仿佛那是一杯美酒，他只是在家中与好友谈论问题而已。<br>
+伟大的人格，总是与当世不合的。苏格拉底没有为了活命而出卖自己的人格，他教导人们，以理性指导自己，不放弃智慧的探索。苏格拉底以死殉节，他以一个伟大的人格，捍卫了追求哲学追求智慧的权利和尊严。</p>
+<h2 id="二、对缺少钱财的慰藉">二、对缺少钱财的慰藉</h2>
+<p><code>当来自欲望的痛苦解除时，简朴的菜肴和奢华的盛宴提供同样的愉悦。──伊壁鸠鲁</code><br>
+<img src="/.io//phil03.jpeg" alt="phile01 pic"><br>
+伊壁鸠鲁以享乐主义而闻名于世，他不认为人生追求享乐、愉悦有何不妥，他觉得应该在有限的人生尽情的享乐。他的哲学最显著的与众不同之处就是强调感官的快乐：“快乐是幸福生活的起点和目标。”他认为快乐的清单是：友谊、自由、思想。他认为财富并不是我们获得快乐的决定因素，财富可以致使我们在一定程度上感到幸福，但是这个幸福的程度是有限的。如果我们拥有友谊、自由和思想，那么就算我们缺少财富，我们还是会感到快乐的。<br>
+追求物质的愉悦，是不会比追求精神的愉悦长久的。物质的愉悦因其易替换可更改，而精神追求要困难得多，要形而上一些，因此精神更加长久，精神财富是无价的，而物质财富是有价的。</p>
+<h2 id="三、对受挫折的慰藉">三、对受挫折的慰藉</h2>
+<p><code>我们无力改变事物的秩序，我们的灵魂必须将自己安适于自然的法则中，这是他们应该追随，服从的……你无法改善，最好是忍受。──塞内加</code><br>
+<img src="/.io//phil04.jpeg" alt="phile01 pic"><br>
+对塞内加来说，我们能够达到的智慧，就是要学习如何避免用我们对挫折的反应来加剧这个世界的顽固性，这种反应包括盛怒、自怜、焦虑、怨恨、自以为是和偏执狂。在他的著作中贯穿始终的一个思想就是：我们对有准备的、理解了的挫折承受力最强，而准备最少、不能预测的挫折对我们伤害最严重。<br>
+塞内加一生命途多舛，他是尼禄皇帝的老师，却在期间被流放至科西嘉岛，而后又因政治牵连，被尼禄赐死。塞内加以不抵抗的形式对抗挫折，而只是消极对待挫折并不正确。他认为对于那些我们无力抗争的挫折和灾难，我们才会听之任之，而非全部挫折都置之不理。塞内加的“消极”抵抗，是基于整个人类的命运的不可抗力而发的，他从悲剧出发，以此减轻我们面对挫折时所受的伤害。他说：<br>
+何必为部分生活而哭泣？君不见全部人生都催人泪下。</p>
+<h2 id="四、对缺陷的慰藉">四、对缺陷的慰藉</h2>
+<p><code>自知说了或做了蠢事，那不算什么，我们必须吸取的更加充分而重要的教训是：我们都是大笨蛋。──蒙田</code><br>
+<img src="/.io//phil05.jpeg" alt="phile01 pic"><br>
+金无足赤人无完人，我们每个人都有缺陷，我们只是女娲随手捏出或者甩出的泥人，是亚当和夏娃一生带着原罪的后代。人们总为自己的缺陷而羞愧万分，呀，为什么做爱不成功？呀，我怎么那么丑？呀，我怎么比谁都笨？而这些想法，都源于我们高估了自己，或者说我们都认为我们该是完美的。<br>
+蒙田坐在他的画栋雕梁下勾画出了一种新的哲学：承认我们离古代大多数思想家以为的那种理性的、宁静的生物有多远。我们的心灵多半是歇斯底里、胡言乱语、粗鲁而躁动，相比之下，动物在许多方面显得是健康和美德的模范──对这一不幸的现实，哲学家是有责任反思的，而他们很少这样做。<br>
+面对我们的缺陷，不该是讳莫如深，而是该坦诚的面对缺陷。造成缺陷感的原因是人们急忙、傲慢地把世界分为两大阵营：正常的和反常的。我们的经历和信仰常常遇到不屑一顾的态度：一句略表惊讶的问话：“真的？多怪！”伴随着耸耸眉毛，就轻易地把我们的合法性和人性给否定了。 我常常明知故犯。从这一角度来说，有很多看上去是缺陷的东西其实并不真正的是缺陷，只是人赋予给它罢了。所以，对待缺陷的第一方法就是，认清所谓的“缺陷”，站在客观角度去思考问题。<br>
+当我们被指责为不正常时，还有一种慰藉是友谊。朋友总是能善待我们，把我们看作比一般人心目中更为正常的人。我们可以向朋友倾诉一些不足与外人道的看法，通常这些看法会被指责为太刻薄，张扬性欲，让人绝望，狡猾，软弱——友谊是一种小小的阴谋，用来对付一般人所谓的合理的事物。因此，对待不正常这类“缺陷”时，友谊是治疗我们的良方。</p>
+<p>​   在蒙田看来，有很多东西可以帮助我们对付“缺陷”。在作者看来，善良而平凡的生活，努力寻找智慧而从未远离愚蠢，有此成就足矣。</p>
+<h2 id="五、对伤心的慰藉">五、对伤心的慰藉</h2>
+<p><code>我们在婚姻中寻找的不是知性娱乐，而是生儿育女……（爱情的缺乏）意谓者可能生出怪异、不快乐、渴望着自身和谐的人。──叔本华</code><br>
+<img src="/.io//phil06.jpeg" alt="phile01 pic"><br>
+在西方哲学史上，叔本华开创了唯意志主义哲学的先河，而他本人也被称为历史上最大的悲观主义哲学家。当叔本华《爱与生的苦恼》、《人生的智慧》开始在国内被本着“拿来主义”的原则翻译、出版、传播的时候，与曾经流行的泛理性主义/注重逻辑的、唯物主义的/研究形而上学的哲学不同，这些人本主义学说很快在校园中引起了轰动，他开始让那个时代的青年更多地去关注人生的本质以及人与世界的关系。叔本华把唯意志主义、唯我主义、悲观主义、虚无主义融为一体，试图建立一种没有宗教的信仰。叔本华的哲学是以“生命意志”（人类与生俱来的求生存和繁殖的本能）为核心展开的，“生命意志可以使已经毫无生趣的人在遇到海难或重病时为生存而斗争”。“任何人生的历史都是苦难的历史，痛苦和缺陷是人生的本质。生命本身没有价值，只是靠需要和幻觉保持运动。”<br>
+人们总会为爱情而伤心，失恋、求爱失败、劳燕分飞，爱情的伤痛为人类抹上太多悲情，这也铸就了无法可歌可泣的故事以及作品，爱情是人类艺术创作的超级题材。叔本华一生孤寂，万年更是与狗相伴，那只狗被人们戏谑为“小叔本华”。他认为爱情是虚妄的，其本质是我们“生命意志”在作祟，两个人相爱其潜意识目的是为了生出更好的后代，即使他们表面没有承认，但是潜意识的选择，却说明并非只是崇高的爱情使他们结合。<br>
+他认为我们在艺术和哲学作品中找到的是我们自己的痛苦和奋斗的客观表述，通过声音、语言和形象予以诠释和再现。所以在追求艺术和哲学的过程中，我们能够淡化“生命意志”对我们的掌控。我们日常生存需要在生命意志的指导下进行，但是当我们思考艺术思考哲学时，我们得以接近生命的本质，因而可以得到暂时的解脱，顿时的明悟。用叔本华的话来说，艺术与哲学以其不同的方式把痛苦转化为知识。<br>
+既然人生本质上就是一个一贯不幸的状况，那么，“我们在黑暗中掘地洞之余，一定要努力化眼泪为知识”就应该是阿兰所说的慰籍了。</p>
+<h2 id="六、对困难的慰藉">六、对困难的慰藉</h2>
+<p><code>从生命中获得极致的圆满和喜悦之秘密就是──生活在险境之中！把你的城市建立在维苏威火山的山坡上。──尼采</code><br>
+<img src="/.io//phil07.jpeg" alt="phile01 pic"><br>
+很少有哲学家推崇悲苦。按照传统的看法，智慧的生活总是与努力减轻苦难、焦虑、绝望、愤怒、自轻和痛心相联系的。譬如之前提到的叔本华，叔本华任何人生即是苦难，我们所有的生活都是由苦难组成的。我们只能逃避苦难，减少生命意志的控制，即寡情薄意，类似佛教出世思想。<br>
+而尼采鄙视这样的懦弱，他认为苦难对于我们获得幸福生活来说是必须的，只有经历不幸才可能获得更多的幸福。没有苦痛的人生，只是乏味无趣的人生。他说：<br>
+对于我所关心的人，我祝愿他们受苦受难、孤寂凄凉、疾病缠身、受尽虐待、备尝屈辱──我希望他们不得免于以下的体验：深刻的自轻自贱、缺乏自信的折磨、一败涂地的悲惨境地。<br>
+德波顿以爬山为例，我们攀爬一座高山，开始我们踌躇满志，爬到中途倍感艰辛而想放弃（许多人在这里退却而返回），最终的强者克服困难爬到山顶，他看到最美的风景，是山脚山腰上的人无法想象的美景。一个人所得成就，是与他所面对的困难成正比的，如果一件事很容易就可以办到，大部分人都能完成这件事情，那么完成这件事或者说这件事情就不会被人们称之为伟大的事情。只有需要历经艰难困苦、克服无尽磨难才能完成的事情，才会使人称颂为伟大。<br>
+苦与乐如此紧密相连，谁想得到多少这一面，就必须尝到多少另一面……你可以任择其一：是尽量少要快乐，简而言之就是无痛苦呢……还是尽量多要不快，以此为代价，得到迄今很少人享受到的丰富的内在的乐趣？如果你决定选择前者，宁愿减轻人类痛苦的程度，那么你也必须降低人类享乐的能力。<br>
+不经历风雨，怎么见彩虹。任何一个伟大的民族都是历经磨难的，任何一棵参天大树都是饱受风霜的，耳边再一次响起海明威那无畏无惧的话语：“让暴风雨来得更猛烈些吧！”。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>求鼓励</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E6%8E%A8%E8%8D%90/" rel="tag"><i class="fa fa-tag"></i> 推荐</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/21/linux05/" rel="next" title="linux笔记系列05-命令与文件的查找">
+                <i class="fa fa-chevron-left"></i> linux笔记系列05-命令与文件的查找
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/23/seurope/" rel="prev" title="极简欧洲史概述">
+                极简欧洲史概述 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://f.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2d77d69d5b47eca8064388ff7.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/charinezhua" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:charinezhua@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/charinezhua" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AF%B9%E4%B8%8E%E4%B8%96%E4%B8%8D%E5%90%88%E7%9A%84%E6%85%B0%E8%97%89"><span class="nav-number">1.</span> <span class="nav-text">一、对与世不合的慰藉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AF%B9%E7%BC%BA%E5%B0%91%E9%92%B1%E8%B4%A2%E7%9A%84%E6%85%B0%E8%97%89"><span class="nav-number">2.</span> <span class="nav-text">二、对缺少钱财的慰藉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AF%B9%E5%8F%97%E6%8C%AB%E6%8A%98%E7%9A%84%E6%85%B0%E8%97%89"><span class="nav-number">3.</span> <span class="nav-text">三、对受挫折的慰藉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%AF%B9%E7%BC%BA%E9%99%B7%E7%9A%84%E6%85%B0%E8%97%89"><span class="nav-number">4.</span> <span class="nav-text">四、对缺陷的慰藉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%AF%B9%E4%BC%A4%E5%BF%83%E7%9A%84%E6%85%B0%E8%97%89"><span class="nav-number">5.</span> <span class="nav-text">五、对伤心的慰藉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%AF%B9%E5%9B%B0%E9%9A%BE%E7%9A%84%E6%85%B0%E8%97%89"><span class="nav-number">6.</span> <span class="nav-text">六、对困难的慰藉</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Charlie Zha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://charinezhua.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://charinezhua.github.io/2018/11/22/phil01/';
+          this.page.identifier = '2018/11/22/phil01/';
+          this.page.title = '《哲学的慰藉》-阿兰.德波顿';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://charinezhua.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

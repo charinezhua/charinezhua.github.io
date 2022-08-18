@@ -1,37 +1,1793 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
 
-{% block page_class %}page-post-detail{% endblock %}
+  
 
 
-{% block content %}
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Linux," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Charlie's Thinking" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="鸟哥Linux私房菜学习笔记之三-文件内容查看">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux笔记系列L03-文件内容查看">
+<meta property="og:url" content="http://charinezhua.github.io/2018/11/21/linux03/index.html">
+<meta property="og:site_name" content="Charlie&#39;s Thinking">
+<meta property="og:description" content="鸟哥Linux私房菜学习笔记之三-文件内容查看">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-11-21T12:58:43.000Z">
+<meta property="article:modified_time" content="2019-12-09T21:03:14.261Z">
+<meta property="article:author" content="Charlie Zha">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://charinezhua.github.io/2018/11/21/linux03/"/>
+
+
+
+
+
+  <title>Linux笔记系列L03-文件内容查看 | Charlie's Thinking</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Charlie's Thinking</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/%20" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://charinezhua.github.io/2018/11/21/linux03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://f.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2d77d69d5b47eca8064388ff7.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Charlie's Thinking">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux笔记系列L03-文件内容查看</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T12:58:43+00:00">
+                2018-11-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-09T21:03:14+00:00">
+                2019-12-09
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/21/linux03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/11/21/linux03/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>鸟哥Linux私房菜学习笔记之三-文件内容查看<br>
+<escape><span id="more"></span></escape></p>
+<h2 id="cat">cat</h2>
+<ul>
+<li>[功能说明]</li>
+</ul>
+<p>查看文件的内容<br>
+cat本身是一个串接命令，把指定一个或多个源文件的内容，利用&gt;符号重定向到目标文件中，如果不指定重定向文件，则默认在标准输出设备上显示。此时，可以利用cat命令来显示文件的内容。若源文件定向到屏幕上，则以连续滚动的方式显示文件内容。如果文件太大，只能看见满屏的字符滚动，看不清文件的内容，所以cat命令适合查看内容不满一屏的文件</p>
+<ul>
+<li>
+<p>[语法格式]<br>
+<code>Cat[参数][源文件][&gt;|&gt;&gt;重定向的文件名]</code></p>
+</li>
+<li>
+<p>[选项参数]</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:left">所有输出的行数编号</td>
+</tr>
+<tr>
+<td style="text-align:center">-b</td>
+<td style="text-align:left">和-n类似，但不对空白行编号</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:left">不输出多行空白，即当遇到有连续两行以上空白，就替换成一行空白行</td>
+</tr>
+<tr>
+<td style="text-align:center">-E</td>
+<td style="text-align:left">在每行结尾显示$符号</td>
+</tr>
+<tr>
+<td style="text-align:center">-T</td>
+<td style="text-align:left">将文件中的tab建显示为^I（i的大写）</td>
+</tr>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:left">显示非打印的字符</td>
+</tr>
+<tr>
+<td style="text-align:center">-t ;-a</td>
+<td style="text-align:left">等于-Vt；等于-VEt</td>
+</tr>
+<tr>
+<td style="text-align:center">-version</td>
+<td style="text-align:left">显示版本信息并退出</td>
+</tr>
+<tr>
+<td style="text-align:center">-help</td>
+<td style="text-align:left">显示帮助信息并退出</td>
+</tr>
+</tbody>
+</table>
+<h2 id="more">more</h2>
+<ul>
+<li>
+<p>[功能说明]<br>
+查看文件的内容<br>
+more和cat相反，适合查看大文件，因为more分屏显示文件的内容，默认情况下每次显示一屏。输入空格后，继续显示下一屏数据，而按Enter只显示下一行数据。用户可以利用Enter建逐行查看文件的内容。输入q，即可退出more命令。</p>
+</li>
+<li>
+<p>[语法格式]<br>
+<code>More[参数][文件名]</code></p>
+</li>
+<li>
+<p>[选项参数]</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:left">在屏幕底部显示press space to continue，‘q’to quit，对于不熟悉more命令的用户非常方便</td>
+</tr>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:left">该参数定义了每次显示从屏幕的最顶部显示文件的内容，即不以滚动的方式显示文件内容，但要先清楚原来的行，然后再显示新的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">-p</td>
+<td style="text-align:left">和-c类似，不同的是，先显示内容，再清空原有的行</td>
+</tr>
+<tr>
+<td style="text-align:center">+&lt;起始行数&gt;</td>
+<td style="text-align:left">从给定的起始行显示文件的内容，比如more：+90：file,则file的内容将从90行开始显示，该参数可以帮助用户迅速定位到查看文件的位置，省去逐页翻屏的麻烦</td>
+</tr>
+<tr>
+<td style="text-align:center">+&lt;屏幕行数&gt;</td>
+<td style="text-align:left">该参数用设置屏幕大小，即一屏多少行：Linux系统默认的是一屏22行，用户可以根据自己的喜好设定屏幕的大小</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:left">和cat命令一样，不输出多行空白</td>
+</tr>
+<tr>
+<td style="text-align:center">+/&lt;关键字&gt;</td>
+<td style="text-align:left">如果用户只关心文件中某关键字和词组，如果肉眼逐行观察，显示是低效的，但利用该参数定位要查询的关键字和词组，系统将跳过前面的行，直接从该关键字第一次出现的前两行显示的内容，若关键字位于前两行，则从前一行显示</td>
+</tr>
+</tbody>
+</table>
+<p>每屏显示完，可以输入相应的参数来控制文件的范围或者退出more命令。例如输入i，可以面对从下屏的第i行开始显示，输入d，用来半屏半屏的显示文件的内容</p>
+<ul>
+<li>More命令参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">i</td>
+<td style="text-align:left">从下屏的第i行开始显示</td>
+</tr>
+<tr>
+<td style="text-align:center">Ctrl+d</td>
+<td style="text-align:left">半屏半屏的显示文件的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:left">同上</td>
+</tr>
+<tr>
+<td style="text-align:center">i+s</td>
+<td style="text-align:left">先输入行数i，然后输入s，系统跳过i行后再显示一屏</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:left">显示帮助文件</td>
+</tr>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:left">显示当前的行</td>
+</tr>
+<tr>
+<td style="text-align:center">q</td>
+<td style="text-align:left">退出more命令</td>
+</tr>
+</tbody>
+</table>
+<h2 id="less">less</h2>
+<ul>
+<li>
+<p>[功能说明]<br>
+less命令的作用与more命令十分相似，都可以用来浏览文件的内容。不同的是，less命令允许用户往来滚动浏览已经看过的内容</p>
+</li>
+<li>
+<p>[语法格式]<br>
+<code>Less[参数][文件名]</code></p>
+</li>
+<li>
+<p>[选项参数]</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-c</td>
+<td style="text-align:left">从顶部刷新屏幕，并显示文件内容，而不是通过底部滚动完成刷新</td>
+</tr>
+<tr>
+<td style="text-align:center">-f</td>
+<td style="text-align:left">强制打开文件，并且二进制文件在显示时不提示警告</td>
+</tr>
+<tr>
+<td style="text-align:center">-i</td>
+<td style="text-align:left">搜索时，忽略大小写，除非搜索串中包含大写字母</td>
+</tr>
+<tr>
+<td style="text-align:center">-I</td>
+<td style="text-align:left">搜索时，忽略大小写，除非搜索串中包含小写字母</td>
+</tr>
+<tr>
+<td style="text-align:center">-m</td>
+<td style="text-align:left">显示读取文件的百分比</td>
+</tr>
+<tr>
+<td style="text-align:center">-M</td>
+<td style="text-align:left">显示读取文件的百分比，行号及总行数</td>
+</tr>
+<tr>
+<td style="text-align:center">-N</td>
+<td style="text-align:left">在每行前输出行号</td>
+</tr>
+<tr>
+<td style="text-align:center">-p:pattern</td>
+<td style="text-align:left">用来搜索指出的字符串。例如，在/etc/passwd目录中搜索字符串userl，就用less -p userl  /etc/passwd,这样该文件中所有的字符串userl将反色显示</td>
+</tr>
+<tr>
+<td style="text-align:center">-s</td>
+<td style="text-align:left">把连续多个空白行作为一个空白行显示</td>
+</tr>
+<tr>
+<td style="text-align:center">-Q</td>
+<td style="text-align:left">在终端下不响铃</td>
+</tr>
+<tr>
+<td style="text-align:center">–help</td>
+<td style="text-align:left">获得在线帮助</td>
+</tr>
+</tbody>
+</table>
+<p>和more命令一样，进入less后可输入相应的动作命令来控制文件的显示范围或者退出less命令。相对more命令，less命令参数相对丰富一些，不仅可以灵活地查看文件的内容，还可以调用vi编辑器对文本进行编辑，具体参数如下:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-h或-H</td>
+<td style="text-align:left">显示这些命令的帮助信息</td>
+</tr>
+<tr>
+<td style="text-align:center">Enter</td>
+<td style="text-align:left">向下移动一行</td>
+</tr>
+<tr>
+<td style="text-align:center">y</td>
+<td style="text-align:left">向上移动一行</td>
+</tr>
+<tr>
+<td style="text-align:center">空格或^V或^F</td>
+<td style="text-align:left">向下滚动一屏</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:left">向上滚动一屏</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:left">向下滚动半屏</td>
+</tr>
+<tr>
+<td style="text-align:center">h</td>
+<td style="text-align:left">帮助信息</td>
+</tr>
+<tr>
+<td style="text-align:center">u</td>
+<td style="text-align:left">向上滚动半屏</td>
+</tr>
+<tr>
+<td style="text-align:center">w<n></n></td>
+<td style="text-align:left">可以指定从哪行开始显示，即从指定数字的下一行显示，例如，若指定的是6，则从第七行显示</td>
+</tr>
+<tr>
+<td style="text-align:center">g</td>
+<td style="text-align:left">跳到第一行</td>
+</tr>
+<tr>
+<td style="text-align:center">G</td>
+<td style="text-align:left">跳到最后一行</td>
+</tr>
+<tr>
+<td style="text-align:center">pn</td>
+<td style="text-align:left">跳到n%处。例如，n为30，也就是说从整个文件内容的30%处开始显示</td>
+</tr>
+<tr>
+<td style="text-align:center">/pattern</td>
+<td style="text-align:left">搜索指定字符串，例如/root表示在文件中搜索root字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">v</td>
+<td style="text-align:left">调用vi</td>
+</tr>
+<tr>
+<td style="text-align:center">q</td>
+<td style="text-align:left">退出less</td>
+</tr>
+<tr>
+<td style="text-align:center">!command</td>
+<td style="text-align:left">调用shell，可按任意键返回到显示文件的屏幕。例如！Ls显示当前目录下的所有文件。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="head">head</h2>
+<ul>
+<li>
+<p>[功能说明]<br>
+如果只需要查看文件头部的内容，利用more和less命令也可以实现，但是用户必须从一屏幕的内容里面提取自己需要的信息，幸运的是，Linux提供了一个方便查看文件头部的命令-head</p>
+</li>
+<li>
+<p>[语法格式]<br>
+<code>Head[参数][文件名]</code></p>
+</li>
+<li>
+<p>[选项参数]</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-<N></N></td>
+<td style="text-align:left">指定显示的行数</td>
+</tr>
+<tr>
+<td style="text-align:center">-n<N>或–lines=<N></N></N></td>
+<td style="text-align:left">显示目标文件的前N行，若N前面加“-”则表示显示除文件最后N行的其他所有行</td>
+</tr>
+<tr>
+<td style="text-align:center">-c<N>或–bytes=<N></N></N></td>
+<td style="text-align:left">显示目标文件的前N行字节，若N前面加“-”则表示显示除文件最后Nbyter行的其他所有内容</td>
+</tr>
+<tr>
+<td style="text-align:center">-v或-verbose</td>
+<td style="text-align:left">总是打印文件名</td>
+</tr>
+<tr>
+<td style="text-align:center">–hele</td>
+<td style="text-align:left">显示帮助信息并退出</td>
+</tr>
+<tr>
+<td style="text-align:center">–version</td>
+<td style="text-align:left">显示版本信息并退出</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tail">tail</h2>
+<ul>
+<li>
+<p>[功能说明]<br>
+tail和head命令相反，默认显示文件末10行，同样也可以设定显示的行数</p>
+</li>
+<li>
+<p>[语法格式]<br>
+<code>Tail[参数][文件名]</code></p>
+</li>
+<li>
+<p>[选项参数]</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">–retry</td>
+<td style="text-align:left">当执行tail命令时，文件变的不可读，可利用此参数试图打开</td>
+</tr>
+<tr>
+<td style="text-align:center">-f或–follwe[{name</td>
+<td style="text-align:left">descriptor}]</td>
+</tr>
+<tr>
+<td style="text-align:center">随着文件的增长，显示文件新追加的内容，比如对于查看日志文件的内容，但是日志文件时动态增长的，利用该参数就可以显示改变的文件内容</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">-F</td>
+<td style="text-align:left">其功能等同于–follow和–retry</td>
+</tr>
+<tr>
+<td style="text-align:center">-n<N>或–lines=<N></N></N></td>
+<td style="text-align:left">显示目标文件的后N行，而不是系统默认的后10行</td>
+</tr>
+<tr>
+<td style="text-align:center">-c<N>或–bytes=<N></N></N></td>
+<td style="text-align:left">显示目标文件的后N行内容</td>
+</tr>
+<tr>
+<td style="text-align:center">-&lt;行数&gt;</td>
+<td style="text-align:left">指定显示文件的末尾行数</td>
+</tr>
+<tr>
+<td style="text-align:center">+&lt;行数&gt;</td>
+<td style="text-align:left">从给定的行数进行显示，直到文件的末尾</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cut">cut</h2>
+<ul>
+<li>
+<p>[功能说明]<br>
+查看文件的部分内容<br>
+cut是用来显示文件的部分内容，用户可以灵活的指定范围，cut有较大的灵活性</p>
+</li>
+<li>
+<p>[语法格式]<br>
+<code>cut[参数][目标文件名][&gt;|&gt;&gt;新的文件名][选项参数]</code></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-b<n1-n2>或-bytes<n1-n2></n1-n2></n1-n2></td>
+<td style="text-align:left">选定每行中从第n1–n2字节的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">-c<n1-n2>或-characters<n1-n2></n1-n2></n1-n2></td>
+<td style="text-align:left">选定每行中从第n1–n2字节的内容</td>
+</tr>
+<tr>
+<td style="text-align:center">-f<n1-n2>或-field<n1-n2></n1-n2></n1-n2></td>
+<td style="text-align:left">选定每行中从第n1–n2字段的内容，每个字段默认以Tab健间隔</td>
+</tr>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:left">和-b一起使用，起到不分割多字节字符的作用，比如汉字</td>
+</tr>
+<tr>
+<td style="text-align:center">-d&lt;字段分隔符&gt;-delimiter=</td>
+<td style="text-align:left">若以字段为单位提取每行内容时，系统默认的是Tab健作为分割符，该参数可以指定分割符号。比如系统账户文件/etc/passwd中每个字段是以“;”作为分割符号，如果提取文件中每行的0-3字段必须通过该参数</td>
+</tr>
+<tr>
+<td style="text-align:center">-s或–only-delimiter</td>
+<td style="text-align:left">只提取包含分隔符号的行，仅和-f参数一起使用</td>
+</tr>
+<tr>
+<td style="text-align:center">–help</td>
+<td style="text-align:left">显示帮助信息并退出</td>
+</tr>
+<tr>
+<td style="text-align:center">–version</td>
+<td style="text-align:left">显示版本信息并退出</td>
+</tr>
+<tr>
+<td style="text-align:center">–output-delimiter=STRING</td>
+<td style="text-align:left">在屏幕上显示或者在重定向的文件上显示，显示分隔符号，默认和输入文件的分隔符一致</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tac">tac</h2>
+<ul>
+<li>
+<p>[功能说明]<br>
+跟cat 差不多 tac是从最后一行倒序显示内容，并将所有内容输出，是将cat输出的内容完全倒过来 该命令不常用</p>
+</li>
+<li>
+<p>[语法格式]<br>
+<code>tac[-n]文件名</code></p>
+</li>
+<li>
+<p>[选项参数]</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-n</td>
+<td style="text-align:left">显示时 连行号一起输出</td>
+</tr>
+</tbody>
+</table>
+<h2 id="touch">touch</h2>
+<ul>
+<li>
+<p>命令功能：<br>
+创建文件和修改文件或者目录的时间戳</p>
+</li>
+<li>
+<p>命令语法：<br>
+<code>touch  【选项】 【文件名或者目录名】</code></p>
+</li>
+<li>
+<p>命令参数：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-a</td>
+<td style="text-align:left">只修改文件的access(访问)时间。</td>
+</tr>
+<tr>
+<td style="text-align:center">-c 或–no-create</td>
+<td style="text-align:left">不创建不存在的文件。</td>
+</tr>
+<tr>
+<td style="text-align:center">-d</td>
+<td style="text-align:left">使用指定的日期时间，而非现在的时间</td>
+</tr>
+<tr>
+<td style="text-align:center">-m</td>
+<td style="text-align:left">指修改Modify(修改)时间,而不修改access(访问)时间</td>
+</tr>
+<tr>
+<td style="text-align:center">-r  file</td>
+<td style="text-align:left">使用指定file文件的时间戳（access，modify）更新文件的时间戳（access，modify）</td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ul>
+<li>access 表示最后一次访问（仅仅是访问，没有改动）文件的时间</li>
+<li>modify 表示最后一次修改文件的时间</li>
+<li>change 表示最后一次对文件属性改变的时间，包括权限，大小，属性等等</li>
+<li>-t  将时间修改为参数指定的日期，如：07081556代表7月8号15点56分</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>求鼓励</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/19/%E8%A2%AB%E9%81%97%E5%BF%98%E7%9A%84%E5%B8%9D%E5%9B%BD2/" rel="next" title="葡萄牙：被遗忘的帝国（下）">
+                <i class="fa fa-chevron-left"></i> 葡萄牙：被遗忘的帝国（下）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/21/linux04/" rel="prev" title="linux笔记系列04-文件与目录的默认权限与隐藏权限">
+                linux笔记系列04-文件与目录的默认权限与隐藏权限 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
 
     <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+      
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+          </div>
+          
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://f.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2d77d69d5b47eca8064388ff7.jpg"
+                alt="" />
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%20%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/charinezhua" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:charinezhua@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/charinezhua" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cat"><span class="nav-number">1.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#more"><span class="nav-number">2.</span> <span class="nav-text">more</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#less"><span class="nav-number">3.</span> <span class="nav-text">less</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head"><span class="nav-number">4.</span> <span class="nav-text">head</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tail"><span class="nav-number">5.</span> <span class="nav-text">tail</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut"><span class="nav-number">6.</span> <span class="nav-text">cut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tac"><span class="nav-number">7.</span> <span class="nav-text">tac</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch"><span class="nav-number">8.</span> <span class="nav-text">touch</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Charlie Zha</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://charinezhua.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://charinezhua.github.io/2018/11/21/linux03/';
+          this.page.identifier = '2018/11/21/linux03/';
+          this.page.title = 'Linux笔记系列L03-文件内容查看';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://charinezhua.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
