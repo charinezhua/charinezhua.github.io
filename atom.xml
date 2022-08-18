@@ -41,9 +41,9 @@
     <link href="http://charinezhua.github.io/2022/08/17/New-Born/"/>
     <id>http://charinezhua.github.io/2022/08/17/New-Born/</id>
     <published>2022-08-17T11:27:36.000Z</published>
-    <updated>2022-08-18T09:15:06.505Z</updated>
+    <updated>2022-08-18T09:41:23.197Z</updated>
     
-    <content type="html"><![CDATA[<p>又回来写作了，新的开始<br><escape><span id="more"></span></escape></p><p>Covid-19病毒依然还在，我的烟还是没有戒掉，俄乌战争已快半年，能源价格高企，全球股债双杀，上海封城数月民心尽失，莱茵河天干河枯，多事之秋啊！我还想在后面加上很大很大的省略号…</p><p>昨天搞了一天把Hexo移到另外一台电脑，结果遇到了无数的坑，主要是各种相应的软件包出问题，总算全解决了。有一个命令相当管用：<code>npm audit fix --force</code>，自动修复了很多软件包，终于搞定了！</p>]]></content>
+    <content type="html"><![CDATA[<p>又回来写作了，新的开始<br><escape><span id="more"></span></escape></p><p>Covid-19病毒依然还在，我的烟还是没有戒掉，俄乌战争已快半年，能源价格高企，全球股债双杀，上海封城数月民心尽失，莱茵河天干河枯，多事之秋啊！我还想在后面加上很大很大的省略号…</p><p>昨天搞了一天把Hexo移到另外一台电脑，结果遇到了无数的坑，主要是各种相应的软件包出问题，总算全解决了。有一个命令相当管用：<code>npm audit fix --force</code>，自动修复了很多软件包；并且theme: next 主题出现了错误，主页直接歇菜，<code>npm install hexo-renderer-swig</code>，终于搞定了！</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;又回来写作了，新的开始&lt;br&gt;
