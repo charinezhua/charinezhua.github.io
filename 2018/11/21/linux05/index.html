@@ -1,37 +1,513 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- PACE Progress Bar START -->
+  
+    
+<script src="https://raw.githubusercontent.com/HubSpot/pace/v1.0.2/pace.min.js"></script>
+
+    
+<link rel="stylesheet" href="https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css">
+
+  
+  
+
+  <!-- PACE Progress Bar START -->
+
+  
+  <title>linux笔记系列05-命令与文件的查找 | Charlie&#39;s Thinking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="keywords" content="Linux" />
+  
+  
+  
+  
+  <meta name="description" content="&amp;#x9E1F;&amp;#x54E5;Linux&amp;#x79C1;&amp;#x623F;&amp;#x83DC;&amp;#x5B66;&amp;#x4E60;&amp;#x7B14;&amp;#x8BB0;&amp;#x4E4B;&amp;#x4E94;-&amp;#x547D;&amp;#x4EE4;&amp;#x4E0E;&amp;#x6587;&amp;#x4EF6;&amp;#x7684;&amp;#x67E5;&amp;#x627E; &lt;escape&gt;&lt;!-- more --&gt;&lt;&#x2F;esc">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux笔记系列05-命令与文件的查找">
+<meta property="og:url" content="http://charinezhua.github.io/2018/11/21/linux05/index.html">
+<meta property="og:site_name" content="Charlie&#39;s Thinking">
+<meta property="og:description" content="&amp;#x9E1F;&amp;#x54E5;Linux&amp;#x79C1;&amp;#x623F;&amp;#x83DC;&amp;#x5B66;&amp;#x4E60;&amp;#x7B14;&amp;#x8BB0;&amp;#x4E4B;&amp;#x4E94;-&amp;#x547D;&amp;#x4EE4;&amp;#x4E0E;&amp;#x6587;&amp;#x4EF6;&amp;#x7684;&amp;#x67E5;&amp;#x627E; &lt;escape&gt;&lt;!-- more --&gt;&lt;&#x2F;esc">
+<meta property="og:locale">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-01.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-02.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-03.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-04.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-05.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-06.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-07.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-08.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-09.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-10.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-11.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-12.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-13.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-14.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-15.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-16.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-17.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-18.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-19.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-20.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-21.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-22.jpeg">
+<meta property="og:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-23.jpeg">
+<meta property="article:published_time" content="2018-11-21T15:07:12.000Z">
+<meta property="article:modified_time" content="2019-12-09T21:03:05.593Z">
+<meta property="article:author" content="Charlie Zha">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://charinezhua.github.io/2018/11/21/linux05/linux05-01.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="Charlie&#39;s Thinking" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/favicon.ico">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="https://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+    
+  <link rel="stylesheet" id="athemes-headings-fonts-css" href="//fonts.googleapis.com/css?family=Yanone+Kaffeesatz%3A200%2C300%2C400%2C700&amp;ver=4.6.1" type="text/css" media="all">
+  
+<link rel="stylesheet" href="/css/style.css">
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+  
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-{% block page_class %}page-post-detail{% endblock %}
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="/css/hiero.css" >
+  <link rel="stylesheet" href="/css/glyphs.css" >
+  
+    <link rel="stylesheet" href="/css/vdonate.css" >
+  
+
+  <!-- Custom CSS -->
+  
+<link rel="stylesheet" href="/css/my.css">
+
+  <!-- Google Adsense -->
+  
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-0123456789ABCDEF",
+          enable_page_level_ads: true
+      });
+  </script>
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<script>
+var themeMenus = {};
+
+  themeMenus["/"] = "Home"; 
+
+  themeMenus["/archives"] = "Archives"; 
+
+  themeMenus["/categories"] = "Categories"; 
+
+  themeMenus["/tags"] = "Tags"; 
+
+  themeMenus["/about"] = "About"; 
+
+</script>
 
 
-{% block content %}
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
-    </div>
+  <header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            
+              <a href="/" rel="home" >
+                <img style="margin-bottom: 10px;"  width="124px" height="124px" alt="Hike News" src="https://hexo.io/logo.svg">
+              </a>
+            
+          </h1>
+
+          
+            
+          <nav id="main-navigation" class="main-navigation" role="navigation">
+            <a class="nav-open">Menu</a>
+            <a class="nav-close">Close</a>
+            <div class="clearfix sf-menu">
+
+              <ul id="main-nav" class="nmenu sf-js-enabled">
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/">Home</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/archives">Archives</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/categories">Categories</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/tags">Tags</a> </li>
+                    
+                      <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="/about">About</a> </li>
+                    
+              </ul>
+            </div>
+          </nav>
+
+
+      </div>
+  </div>
+</header>
+
+
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
   </div>
 
-{% endblock %}
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "css/images/pose.jpg,https://source.unsplash.com/collection/954550/1920x1080".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='/' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+
+  <div id="container">
+    <div id="wrap">
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-linux05" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      linux笔记系列05-命令与文件的查找
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	Posted on <a href="/2018/11/21/linux05/" class="article-date">
+	  <time datetime="2018-11-21T15:07:12.000Z" itemprop="datePublished">November 21, 2018</time>
+	</a>
+
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&#x9E1F;&#x54E5;Linux&#x79C1;&#x623F;&#x83DC;&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#x4E4B;&#x4E94;-&#x547D;&#x4EE4;&#x4E0E;&#x6587;&#x4EF6;&#x7684;&#x67E5;&#x627E;
+&lt;escape&gt;&lt;!-- more --&gt;&lt;/escape&gt;</p>
+<h2>file&#xFF1A;&#x67E5;&#x770B;&#x6587;&#x4EF6;&#x7C7B;&#x578B;</h2>
+<p>&#x5982;&#x679C;&#x60F3;&#x77E5;&#x9053;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x57FA;&#x672C;&#x6570;&#x636E;&#xFF0C;&#x4F8B;&#x5982;&#x662F;&#x5C5E;&#x4E8E;ASCII&#x7801;&#x6216;&#x8005;&#x662F;data&#x6587;&#x4EF6;&#xFF0C;&#x6216;&#x8005;&#x662F;binary&#xFF0C;&#x4E14;&#x5176;&#x4E2D;&#x6709;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x5230;&#x52A8;&#x6001;&#x51FD;&#x6570;&#x5E93;&#x7B49;&#x7B49;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;file&#x547D;&#x4EE4;&#x3002;
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS ~]# file ~/.bashrc</span><br><span class="line">/root/.bashrc: ASCII text</span><br><span class="line"></span><br><span class="line">[root@CentOS ~]# file /usr/bin/passwd </span><br><span class="line">/usr/bin/passwd: setuid ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.18, stripped</span><br></pre></td></tr></table></figure></p>
+<h2>which&#xFF1A;&#x811A;&#x672C;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x67E5;&#x8BE2;</h2>
+<p>&#x53C2;&#x6570;&#xFF1A;
+-a&#xFF1A;&#x5C06;&#x6240;&#x6709;PATH&#x76EE;&#x5F55;&#x4E2D;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x7684;&#x547D;&#x4EE4;&#x5747;&#x5217;&#x51FA;&#xFF0C;&#x800C;&#x4E0D;&#x53EA;&#x7B2C;&#x4E00;&#x4E2A;&#x88AB;&#x627E;&#x5230;&#x7684;&#x547D;&#x4EE4;&#x540D;&#x79F0;
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@CentOS lib]# which ifconfig</span><br><span class="line">/sbin/ifconfig</span><br><span class="line">[root@CentOS lib]# which ls</span><br><span class="line">alias ls=&apos;ls --color=auto&apos;</span><br><span class="line">[root@CentOS lib]# which cd</span><br><span class="line">/usr/bin/which: no cd in (/usr/lib/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/kevin/bin)</span><br><span class="line">        # &#x67E5;&#x4E0D;&#x5230;cd&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;cd&#x662F;&#x5185;&#x7F6E;&#x547D;&#x4EE4;&#xFF0C;&#x4E0D;&#x5728;PATH&#x8DEF;&#x5F84;&#x4E2D;&#x3002; </span><br></pre></td></tr></table></figure>
+<img src="/2018/11/21/linux05/linux05-01.jpeg" alt="linux05x pic"></p>
+<h2>whereis&#xFF1A;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x67E5;&#x627E;</h2>
+<p>&#x53C2;&#x6570;&#xFF1A;
+-b&#xFF1A;&#x53EA;&#x627E;&#x4E8C;&#x8FDB;&#x5236;&#x683C;&#x5F0F;&#x7684;&#x6587;&#x4EF6;
+-m&#xFF1A;&#x53EA;&#x627E;&#x5728;&#x8BF4;&#x660E;&#x6587;&#x4EF6;manual&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;
+-s&#xFF1A;&#x53EA;&#x627E;source&#x6E90;&#x6587;&#x4EF6;
+-u&#xFF1A;&#x67E5;&#x627E;&#x4E0D;&#x5728;&#x4E0A;&#x8FF0;&#x4E09;&#x4E2A;&#x9009;&#x9879;&#x5F53;&#x4E2D;&#x7684;&#x5176;&#x4ED6;&#x7279;&#x6B8A;&#x6587;&#x4EF6;
+&#x4E00;&#x822C;&#x7528;&#x6237;&#x627E;&#x4E0D;&#x5230;&#x7684;&#x547D;&#x4EE4;&#x5374;&#x53EF;&#x4EE5;&#x8BA9;whereis&#x627E;&#x5230;
+<img src="/2018/11/21/linux05/linux05-02.jpeg" alt="linux05x pic"></p>
+<h2>locate&#xFF1A;&#x6587;&#x4EF6;&#x540D;&#x67E5;&#x627E;</h2>
+<p>&#x53C2;&#x6570;&#xFF1A;
+-i&#xFF1A;&#x5FFD;&#x7565;&#x5927;&#x5C0F;&#x5199;
+-r&#xFF1A;&#x540E;&#x9762;&#x53EF;&#x63A5;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x663E;&#x793A;&#x65B9;&#x5F0F;
+&#x5FD8;&#x8BB0;&#x67D0;&#x4E2A;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x5728;&#x540E;&#x9762;&#x8F93;&#x5165;&#x201C;&#x6587;&#x4EF6;&#x7684;&#x90E8;&#x5206;&#x540D;&#x79F0;&#x201D;&#x540E;&#x5C31;&#x80FD;&#x627E;&#x5230;&#x7ED3;&#x679C;&#xFF0C;&#x56E0;&#x4E3A;locate&#x5BFB;&#x627E;&#x7684;&#x6570;&#x636E;&#x662F;&#x7531;&#x5DF2;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x5E93;/var/lib/mlocate/&#x91CC;&#x9762;&#x7684;&#x6570;&#x636E;&#x6240;&#x67E5;&#x627E;&#x5230;&#x7684;&#xFF0C;&#x4E0D;&#x7528;&#x76F4;&#x63A5;&#x5728;&#x786C;&#x76D8;&#x8BBF;&#x95EE;&#x6570;&#x636E;
+&#x624B;&#x52A8;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5E93;&#x76F4;&#x63A5;&#x8F93;&#x5165;&#x201C;updatedb&#x201D;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;
+updatedb&#x547D;&#x4EE4;&#x4F1A;&#x53BB;&#x8BFB;&#x53D6;/etc/updatedb.conf&#x8FD9;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x8BBE;&#x7F6E;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x53BB;&#x786C;&#x76D8;&#x91CC;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6700;&#x540E;&#x66F4;&#x65B0;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x6587;&#x4EF6;&#x3002;
+<img src="/2018/11/21/linux05/linux05-03.jpeg" alt="linux05x pic"></p>
+<h2>find&#xFF1A;&#x67E5;&#x627E;&#x6587;&#x4EF6;&#x540D;</h2>
+<p>1 . &#x53C2;&#x6570;&#xFF1A;
+<img src="/2018/11/21/linux05/linux05-04.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-05.jpeg" alt="linux05x pic">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 4&#x5929;&#x5185;&#x88AB;&#x6539;&#x52A8;&#x8FC7;&#x6587;&#x4EF6;&#x540D;&#xFF1A;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find /var -mtime -4</span><br><span class="line"></span><br><span class="line"># 4&#x5929;&#x524D;&#x7684;&#x90A3;&#x4E00;&#x5929;&#x6539;&#x52A8;&#x8FC7;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF1A;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find /var -mtime 4</span><br></pre></td></tr></table></figure>
+<img src="/2018/11/21/linux05/linux05-06.jpeg" alt="linux05x pic"></p>
+<p>2 . &#x53C2;&#x6570;&#xFF1A;
+<img src="/2018/11/21/linux05/linux05-07.jpeg" alt="linux05x pic">
+&#x53EF;&#x4EE5;&#x627E;&#x51FA;&#x67D0;&#x7528;&#x6237;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x521B;&#x5EFA;&#x4E86;&#x4EC0;&#x4E48;
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># &#x627E;&#x51FA;&#x67D0;&#x7528;&#x6237;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF1A;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find /home -user kevin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># &#x627E;&#x51FA;&#x4E0D;&#x5C5E;&#x4E8E;&#x7CFB;&#x7EDF;&#x4E2D;&#x4EFB;&#x4F55;&#x4EBA;&#x7684;&#x6587;&#x4EF6;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># / &#x4EE3;&#x8868;&#x6839;&#x76EE;&#x5F55;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find / -nouser</span><br></pre></td></tr></table></figure></p>
+<p>3 . &#x53C2;&#x6570;&#xFF1A;
+<img src="/2018/11/21/linux05/linux05-08.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-09.jpeg" alt="linux05x pic">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"># &#x627E;&#x51FA;&#x6587;&#x4EF6;&#x540D;&#x4E3A;paswd&#x7684;&#x6587;&#x4EF6;&#xFF1A;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find / -name passwd</span><br><span class="line"></span><br><span class="line">#&#x627E;&#x51FA;/var&#x76EE;&#x5F55;&#x4E0B;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x4E3A;socket&#x7684;&#x6587;&#x4EF6;&#x540D;&#x6709;&#x54EA;&#x4E9B;&#xFF1A;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find /var -type s</span><br><span class="line"></span><br><span class="line">#&#x627E;&#x51FA;/var&#x76EE;&#x5F55;&#x4E0B;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x4E3A;FIFO&#x7684;&#x6587;&#x4EF6;&#x540D;&#x6709;&#x54EA;&#x4E9B;&#xFF1A;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find /var -type p</span><br><span class="line"></span><br><span class="line"># &#x67E5;&#x627E;&#x6587;&#x4EF6;&#x5F53;&#x4E2D;&#x542B;&#x6709;SGID&#x6216;SUID&#x6216;SBIT&#x7684;&#x5C5E;&#x6027;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find / -perm +7000</span><br><span class="line"></span><br><span class="line"># +7000&#x662F;----s--s--t&#xFF0C;&#x90A3;&#x4E48;&#x53EA;&#x8981;&#x542B;&#x6709;s&#x6216;t&#x7684;&#x5C31;&#x5217;&#x51FA;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># -7000&#x8868;&#x793A;&#x542B;&#x6709;----s--s--t&#x7684;&#x6240;&#x6709;&#x4E09;&#x4E2A;&#x6743;&#x9650;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># &#x5047;&#x8BBE;&#x6211;&#x60F3;&#x8981;&#x5C06;/bin&#x3001;/sbin&#x8FD9;&#x4E24;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x53EA;&#x8981;&#x5177;&#x6709;SUID&#x6216;&#x8005;SGID&#x7684;&#x6587;&#x4EF6;&#x5C31;&#x5217;&#x51FA;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find /bin /sbin -perm +6000</span><br><span class="line"></span><br><span class="line"># find&#x672C;&#x8EAB;&#x5C31;&#x4F1A;&#x5217;&#x51FA;&#x5B50;&#x76EE;&#x5F55;</span><br></pre></td></tr></table></figure></p>
+<p>4 . &#x53C2;&#x6570;&#xFF1A;
+<img src="/2018/11/21/linux05/linux05-10.jpeg" alt="linux05x pic">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># &#x5C06;&#x627E;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x4F7F;&#x7528;ls -l&#x5217;&#x51FA;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find / -perm +7000 -exec ls -l () \</span><br><span class="line"></span><br><span class="line"># -exec&#x540E;&#x9762;&#x7684;ls -l&#x5C31;&#x662F;&#x989D;&#x5916;&#x547D;&#x4EE4;&#xFF0C;&#x547D;&#x4EE4;&#x4E0D;&#x652F;&#x6301;&#x547D;&#x4EE4;&#x522B;&#x540D;&#xFF0C;&#x4E0D;&#x80FD;&#x7528;ll</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># &#x627E;&#x51FA;&#x7CFB;&#x7EDF;&#x4E2D;&#x5927;&#x4E8E;1M&#x7684;&#x6587;&#x4EF6;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find / -size +1000k</span><br></pre></td></tr></table></figure>
+<img src="/2018/11/21/linux05/linux05-11.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-12.jpeg" alt="linux05x pic">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># find&#x8FD8;&#x652F;&#x6301;&#x901A;&#x914D;&#x7B26;&#x6765;&#x67E5;&#x627E;</span><br><span class="line"></span><br><span class="line">[root@CentOS lib]# find /etc -name &apos;*hpptd*&apos;</span><br><span class="line"></span><br><span class="line"># find&#x81EA;&#x52A8;&#x67E5;&#x8BE2;&#x5B50;&#x76EE;&#x5F55;</span><br></pre></td></tr></table></figure></p>
+<h3>&#x6743;&#x9650;&#x4E0E;&#x547D;&#x4EE4;&#x95F4;&#x7684;&#x5173;&#x7CFB;</h3>
+<p>&#x6307;&#x4EE4;&#x9700;&#x8981;&#x5728;&#x4EC0;&#x4E48;&#x6837;&#x7684;&#x6743;&#x9650;&#x4E0B;&#x624D;&#x80FD;&#x8FD0;&#x4F5C;&#xFF1A;
+<img src="/2018/11/21/linux05/linux05-13.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-14.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-15.jpeg" alt="linux05x pic"></p>
+<h3>&#x91CD;&#x70B9;&#x56DE;&#x987E;</h3>
+<p><img src="/2018/11/21/linux05/linux05-16.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-17.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-18.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-19.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-20.jpeg" alt="linux05x pic"></p>
+<p>&#x7B80;&#x7B54;&#x9898;
+<img src="/2018/11/21/linux05/linux05-21.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-22.jpeg" alt="linux05x pic">
+<img src="/2018/11/21/linux05/linux05-23.jpeg" alt="linux05x pic"></p>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+      
+        <div id="donation_div"></div>
+
+
+<script src="/js/vdonate.js"></script>
+
+<script>
+var a = new Donate({
+  title: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!', // 可选参数，打赏标题
+  btnText: 'Donate', // 可选参数，打赏按钮文字
+  el: document.getElementById('donation_div'),
+  wechatImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/WeChanQR.png',
+  alipayImage: 'https://raw.githubusercontent.com/iTimeTraveler/iTimeTraveler.github.io/site/source/about/donate/images/AliPayQR.jpg'
+});
+</script>
+      
+            
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/11/22/phil01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          《哲学的慰藉》-阿兰.德波顿
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/11/21/linux04/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux笔记系列04-文件与目录的默认权限与隐藏权限</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">file：查看文件类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">which：脚本文件名的查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">whereis：文件名的查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">locate：文件名查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">find：查找文件名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.1.</span> <span class="nav-text">权限与命令间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">5.2.</span> <span class="nav-text">重点回顾</span></a></li></ol></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      <footer id="footer" class="site-footer">
+  
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; 2022 Charlie&#39;s Thinking All Rights Reserved.
+          
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          
+      </div>
+      <div class="site-credit">
+        Theme by <a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank">hiero</a>
+      </div>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+
+<script src="/js/my.js"></script>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css">
+
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/scripts.js"></script>
+
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="https://dnqof95d40fo6.cloudfront.net/atw7f8.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js" async=""></script>
+</body>
+</html>
