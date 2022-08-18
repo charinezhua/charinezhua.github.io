@@ -332,8 +332,9 @@ Git<br>
 <p>Covid-19病毒依然还在，我的烟还是没有戒掉，俄乌战争已快半年，能源价格高企，全球股债双杀，上海封城数月民心尽失，莱茵河天干河枯，多事之秋啊！我还想在后面加上很大很大的省略号…</p>
 <p>小电脑太慢了，前两天开始作Hexo迁移，结果遇到了无数的坑，各种相应的软件包出问题。折腾半天，，终于搞定了！google到一个命令相当管用：<code>npm audit fix --force</code>，自动修复了很多软件包；修复后theme: next 主题出现了错误，主页直接歇菜，用<code>npm install hexo-renderer-swig</code>命令解决；然后next配置文件里还出现了很多空格，首页的链接点击后全部404，删除空格解决。</p>
 <p>环境准备好了，可以启航了！！！</p>
-<p>有两种信条：善与恶，化身为两个交战的神，善最终取得胜利，而死了的那个则复活，在人间创造天堂</p>
-<img src="/2022/08/17/New-Born/Nietzsche_s3_001.png" class title="Nietzsche_s3_001">]]></content>
+<p>有两种信条：善与恶，化身为两个交战的神，善最终取得胜利，而死了的那个则复活，在人间创造天堂<br>
+<img src="/2022/08/17/New-Born/Nietzsche_s3_001.png" alt></p>
+]]></content>
       <categories>
         <category>随笔</category>
       </categories>
