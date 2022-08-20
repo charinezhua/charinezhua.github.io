@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://charinezhua.github.io/2022/08/20/%E7%9C%9F%E5%90%AF%E8%92%99%E8%BF%98%E6%98%AF%E7%9C%9F%E9%9D%A9%E5%91%BD/</loc>
+    
+    <lastmod>2022-08-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://charinezhua.github.io/2022/08/19/%E8%B0%88%E8%87%AA%E7%94%B1%EF%BC%8C%E6%B5%85%E6%B5%85%E5%9C%B0/</loc>
     
     <lastmod>2022-08-19</lastmod>
@@ -482,6 +491,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://charinezhua.github.io/tags/%E4%B8%AD%E5%9B%BD/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -563,6 +579,13 @@
   
   <url>
     <loc>https://charinezhua.github.io/categories/%E6%96%87%E5%8C%96/</loc>
+    <lastmod>2022-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://charinezhua.github.io/categories/%E6%94%BF%E6%B2%BB/</loc>
     <lastmod>2022-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
